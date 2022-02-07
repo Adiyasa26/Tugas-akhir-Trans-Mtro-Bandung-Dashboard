@@ -1,0 +1,20 @@
+.grid {
+  display: grid;
+  grid-template-columns: 5% 30% 65%;
+  height: 100vh;
+}
+
+.menubar {
+  grid-row: row 0;
+  grid-column: column 0;
+}
+
+.sidebar {
+  grid-row: row 0;
+  grid-column: column 0;
+}
+
+.filter {
+  grid-row: row 0;
+  grid-column: column 2;
+}
