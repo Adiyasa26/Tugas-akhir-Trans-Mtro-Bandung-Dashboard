@@ -3,7 +3,7 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 30px 25px;
+  padding: 20px 25px;
 
   position: absolute;
   z-index: 99;
@@ -15,6 +15,10 @@
   box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.1);
 }
 
+.navigation img {
+  cursor: pointer;
+}
+
 .logout {
   display: flex;
   flex-direction: row;
@@ -24,6 +28,7 @@
   background-color: #164e63;
   color: #ffffff;
   border-radius: 5px;
+  cursor: pointer;
 }
 
 .logout:hover {

@@ -1,0 +1,18 @@
+.filter-waktu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-filter-waktu {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.filter-waktu h1 {
+  font-size: 24px;
+  color: #0369a1;
+  margin-bottom: 20px !important;
+}
