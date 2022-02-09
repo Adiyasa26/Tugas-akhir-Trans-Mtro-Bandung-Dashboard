@@ -1,6 +1,7 @@
 import React from 'react';
 
 import FilterWaktu from './filterWaktu.component';
+import HasilFilterTotalPenumpang from './hasilFilterTotalPenumpang.component';
 
 import './Filter.style.css';
 
@@ -11,7 +12,9 @@ function Filter() {
         <FilterWaktu />
       </div>
       <div className="grid-item item2">2</div>
-      <div className="grid-item item3">3</div>
+      <div className="grid-item item3">
+        <HasilFilterTotalPenumpang />
+      </div>
       <div className="grid-item item4"></div>
       <div className="grid-item item5">
         <button>Test</button>

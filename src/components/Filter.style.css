@@ -14,11 +14,13 @@
   padding: 40px;
   font-size: 30px;
   border-radius: 5px;
+  color: #0369a1;
 }
 
 .item1 {
   grid-row: 1 / 4;
   grid-column: 1 / 2;
+  display: flex;
 }
 
 .item2 {

@@ -1,0 +1,36 @@
+.total-penumpang h1 {
+  font-size: 24px;
+  text-align: left !important;
+  margin-bottom: 20px !important;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-row-total-penumpang {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 30px !important;
+}
+
+.flex-row-total-penumpang img {
+  margin-right: 30px;
+}
+
+.flex-row-total-penumpang h2 {
+  font-size: 48px;
+  margin-bottom: 5px;
+}
+
+.flex-row-total-penumpang h4 {
+  font-size: 18px;
+}
+
+.flex-column-total-penumpang {
+  display: flex;
+  flex-direction: column;
+}
