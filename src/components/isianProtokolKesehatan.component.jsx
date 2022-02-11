@@ -5,10 +5,6 @@ import LogoMasker from '../icon/Masker.svg';
 import './isianProtokolKesehatan.style.css';
 
 function IsianProtokolKesehatan(props) {
-  //   if (props.name === 'masker') {
-
-  //   }
-  console.log(LogoMasker);
   return (
     <div className="flex-row-prokes">
       <img src={props.img} alt="Logo Masker" />
