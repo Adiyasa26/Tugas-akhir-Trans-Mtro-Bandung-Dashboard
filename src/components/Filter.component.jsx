@@ -7,6 +7,8 @@ import TotalPendapatan from './totalPendapatan.component';
 
 import './Filter.style.css';
 
+import LogoUnduh from '../icon/Download.svg';
+
 function Filter() {
   return (
     <div className="grid-container">
@@ -23,7 +25,10 @@ function Filter() {
         <TotalPendapatan />
       </div>
       <div className="grid-item item5">
-        <button>Test</button>
+        <button>
+          <img src={LogoUnduh} alt="Logo Unduh" />
+          Unduh Data
+        </button>
       </div>
     </div>
   );

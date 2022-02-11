@@ -17,6 +17,11 @@
 }
 
 .menubar a:hover {
+  background-color: #f7fbff;
+  color: #0284c7;
+}
+
+.active {
   background-color: #e0f2fe;
   color: #0284c7;
 }
