@@ -1,0 +1,15 @@
+.filter-waktu {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-filter-waktu {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.filter-waktu h1 {
+  font-size: 20px;
+  margin-bottom: 20px !important;
+}

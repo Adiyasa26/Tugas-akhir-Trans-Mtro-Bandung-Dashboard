@@ -1,0 +1,24 @@
+.isian-total-pendapatan {
+  margin-bottom: 30px;
+}
+
+.isian-total-pendapatan h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: black;
+}
+
+.isian-total-pendapatan h3 {
+  font-size: 22px;
+}
+
+.flex-total-pendapatan {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-total-pendapatan img {
+  margin-right: 20px;
+}

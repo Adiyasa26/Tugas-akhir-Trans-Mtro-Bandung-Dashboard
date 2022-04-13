@@ -1,0 +1,31 @@
+.menubar {
+  background-color: #ffffff;
+  overflow-x: hidden;
+  padding-top: 100px;
+  box-shadow: 3px 0px 10px rgba(0, 0, 0, 0.1);
+  align-items: center;
+
+  z-index: 10;
+}
+
+.menubar img{
+  width: 140%;
+}
+
+.menubar a {
+  padding: 25px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.menubar a:hover {
+  background-color: #eff7ff;
+  color: #0284c7;
+}
+
+.active {
+  background-color: #e0f2fe;
+  color: #0284c7;
+}
