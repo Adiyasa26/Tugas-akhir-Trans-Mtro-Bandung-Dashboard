@@ -7,7 +7,7 @@
   padding: 100px 40px 40px 40px;
   z-index: 8;
 
-  overflow: scroll;
+  overflow-y: scroll;
 }
 
 .grid-item {
