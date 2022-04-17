@@ -1,19 +1,20 @@
 .sidebar {
-  background-color: #ffffff;
-  padding: 100px 30px 30px 30px;
-  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-
+  background-color: #f7f7f7;
+  padding: 25px 0px;
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.2);
   z-index: 9;
 }
 
-.sidebar h1 {
+.sidebar-header h1 {
+  color: #3E4345;
   font-size: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   font-weight: bold;
 }
 
 .card_container {
-  overflow-y: scroll !important;
-  height: 85%;
+  height: 100vh;
+  padding: 30px 10px;
+  position: relative;
+  overflow: scroll;
 }

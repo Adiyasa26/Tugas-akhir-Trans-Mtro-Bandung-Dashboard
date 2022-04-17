@@ -1,20 +1,23 @@
 import React from 'react';
 
-import CardBus from '../CardBus/CardBus.component.jsx';
+import BusSelector from '../BusSelector/BusSelector.component.jsx';
+import Calendar from '../Calendar/Calendar.component.jsx';
 
 import './SideBar.style.css';
 
 function SideBar() {
   return (
     <div className="sidebar">
-      <h1>
-        Aktivitas Armada <br /> Trans Metro Bandung
-      </h1>
+      <div className="sidebar-header">
+        <h1>
+          Dashboard Smart Metro
+        </h1>
+
+        <Calendar />
+      </div>
+      
       <div className="card_container">
-        <CardBus />
-        <CardBus />
-        <CardBus />
-        <CardBus />
+        <BusSelector />
       </div>
     </div>
   );

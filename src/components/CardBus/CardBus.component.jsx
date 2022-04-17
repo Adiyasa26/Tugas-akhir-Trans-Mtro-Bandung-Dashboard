@@ -1,20 +1,35 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 import './CardBus.style.css';
 
 import TimeProgressThin from '../../icon/Time_progress_thin.svg';
 import PinLight from '../../icon/Pin_light_thin.svg';
 
-function CardBus() {
+function CardBus(props) {
+  const [isSelected, setIsSelected] = useState(false)
+
+  const selectedHandler = () => {
+    if (isSelected) {
+      const card = document.querySelector('.card');
+      card.classList.add('selected');
+      return setIsSelected(!isSelected);
+    }
+    else {
+      const card = document.querySelector('.card');
+      card.classList.remove('selected');
+      return setIsSelected(!isSelected);
+    }
+  } 
+  
   return (
-    <div className="card">
+    <div className="card" onClick={selectedHandler}>
       <div className="bus--left">
-        <h1>1</h1>
+        <h1>{props.busInfo.armada}</h1>
       </div>
       <div className="bus--right">
         <div className="title">
-          <h1>Armada 1</h1>
-          <h2>Jurusan Cibiru - Cicaheum</h2>
+          <h1>{`Armada ${props.busInfo.armada}`}</h1>
+          <h2>{props.busInfo.jurusan}</h2>
         </div>
 
         <div className="detail">
@@ -24,7 +39,7 @@ function CardBus() {
             </div>
             <div className="detail_content">
               <h3>Pemberhentian Terakhir</h3>
-              <h3>09.20 : 09.45</h3>
+              <h3>{props.busInfo.pemberhentian}</h3>
             </div>
           </div>
           <div className="detail--item">
@@ -33,7 +48,7 @@ function CardBus() {
             </div>
             <div className="detail_content">
               <h3>Lokasi Pemberhentian Terakhir</h3>
-              <h3>Jl. Jendral Sudirman</h3>
+              <h3>{props.busInfo.lokasi}</h3>
             </div>
           </div>
         </div>
