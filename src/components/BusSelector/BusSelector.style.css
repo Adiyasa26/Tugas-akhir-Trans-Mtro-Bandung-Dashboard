@@ -5,10 +5,6 @@
     align-items: center;
 }
 
-.bus-selector--container > * {
-   margin: 5px 0;
-}
-
 .bus-selector--container > img{
     cursor: pointer;
     width: 7%;
