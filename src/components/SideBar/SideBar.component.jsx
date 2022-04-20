@@ -10,7 +10,7 @@ function SideBar() {
     <div className="sidebar">
       <div className="sidebar-header">
         <h1>
-          Dashboard Smart Metro
+          Smart Metro
         </h1>
 
         <Calendar />

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 
+import Keluar from './Keluar.component';
 import './MenuBar.style.css';
 
 import HomeLogoActive from '../../icon/Home.svg';
@@ -12,11 +13,13 @@ import LogoUnduh from '../../icon/Download.svg';
 function MenuBar() {
   const [homeActive, setHomeActive] = useState(true);
   const [predictionActive, setPredictionActive] = useState(false);
+  const [isClicked, setIsClicked] = useState(false);
 
   return (
     <div className="menubar">
+      <Keluar className={`popup-container ${!isClicked ? 'hide' : ''}`}/>
       <div className="logo">
-        <img src={UserLogo} alt="User Logo" />
+        <img src={UserLogo} alt="User Logo" onClick={() => setIsClicked(!isClicked)}/>
       </div>
       <div className="menu-container">
         <a

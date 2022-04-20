@@ -29,5 +29,5 @@
 }
 
 .react-datepicker-popper {
-    transform: translate3d(60%, 60%, 0px)!important;
+    transform: translate3d(60%, 50%, 0px)!important;
 }
