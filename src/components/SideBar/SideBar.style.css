@@ -1,7 +1,7 @@
 .sidebar {
+  padding: 25px 0;
   height: 100vh;
   background-color: #f7f7f7;
-  padding: 25px 0px;
   box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.2);
   z-index: 9;
 }
@@ -15,15 +15,15 @@
 .sidebar-header > h1 {
   color: #3E4345;
   font-size: 20px;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   font-weight: bold;
   text-align: center;
 }
 
 .card_container {
-  height: 82%;
-  padding: 30px 10px;
   position: relative;
+  height: 79%;
+  padding: 30px 10px;
   overflow-y: scroll;
 }
 

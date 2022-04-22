@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 
-import BusSelector from '../BusSelector/BusSelector.component.jsx';
+import BusSelector from '../BusSelector/BusSelector.component';
 import SearchBox from '../SearchBox/SearchBox.component'
 
 import './SideBar.style.css';
@@ -80,7 +80,6 @@ function SideBar() {
     },
   ]);
 
-
   const handleChange = (e) => {
     setSearchField(e.target.value);
   }
@@ -94,12 +93,12 @@ function SideBar() {
           Smart Metro
         </h1>
         <SearchBox placeholder='Keberangkatan/Kedatangan' handleChange={handleChange} />
-      
       </div>
       
       <div className="card_container">
-        <BusSelector buses={filteredBus}/>
+        <BusSelector buses={filteredBus} setSearchField={setSearchField} searchField={searchField}/>
       </div>
+      
     </div>
   );
 }
