@@ -1,0 +1,43 @@
+.information-container {
+    height: 100vh;
+    background-color: #f7f7f7;
+    padding: 20px;
+    overflow: hidden;
+}
+
+.information-container h1 {
+    color: #3E4345;
+    font-size: 20px;
+}
+
+.information-container--header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.calendar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 30%;
+}
+
+.calendar img{
+    width: 15px;
+    margin-right: 10px;
+}
+
+.calendar--header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.calendar p {
+    font-size: 12px;
+    color: #919699;
+}
