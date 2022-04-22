@@ -22,7 +22,7 @@
 
 .card_container {
   position: relative;
-  height: 79%;
+  height: 85%;
   padding: 30px 10px;
   overflow-y: scroll;
 }
