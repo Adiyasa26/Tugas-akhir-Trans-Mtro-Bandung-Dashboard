@@ -1,9 +1,9 @@
 import React from 'react';
 
-import './CardBus.style.css';
+import './style.css';
 
-import TimeProgressThin from '../../icon/Time_progress_thin.svg';
-import PinLight from '../../icon/Pin_light_thin.svg';
+import TimeProgressThin from '../../../../icon/Time_progress_thin.svg';
+import PinLight from '../../../../icon/Pin_light_thin.svg';
 
 function CardBus(props) {
   let { bus, isSelected, onClick} = props;

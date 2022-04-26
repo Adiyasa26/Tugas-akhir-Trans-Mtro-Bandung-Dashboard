@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 
-import CardBus from '../CardBus/CardBus.component';
-import BusSelected from './BusSelected.component';
+import CardBus from '../Bus';
+import BusSelected from './Bus-List-Selected';
 
-import './BusSelector.style.css'
+import './style.css'
 
 function BusSelector(props) {
   const {buses, searchField, setSearchField} = props;

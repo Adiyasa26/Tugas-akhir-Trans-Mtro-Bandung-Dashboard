@@ -1,6 +1,6 @@
 import React from 'react'
 
-import './Keluar.style.css'
+import './style.css'
 
 import SignOutLogo from '../../icon/Sign_out_squre_light.svg';
 

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
-import Keluar from './Keluar.component';
-import './MenuBar.style.css';
+import Keluar from '../SignOut';
+import './style.css';
 
 import HomeLogoActive from '../../icon/Home.svg';
 import TimeProgressActive from '../../icon/Time_progress.svg';

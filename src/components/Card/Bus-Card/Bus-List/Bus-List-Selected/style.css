@@ -7,9 +7,8 @@
     height:35px;
     padding: 10px;
     position: fixed;
-    bottom: 5%;
-    left: 26%;
     z-index: 10;
+    left: 25%;
 }
 
 .item {
@@ -25,6 +24,7 @@
     transition: 0.1s ease-in-out;
     opacity: 1;
     transition: visibility 0s, opacity 0.2s linear;
+    transition: 0.1s ease-in-out;
 }
 
 .hide {
@@ -44,7 +44,6 @@
     color: #ffffff;
     position: fixed;
     bottom: 5%;
-    left: 26%;
 }
 
 .clear-search {
@@ -52,5 +51,4 @@
     color: #ffffff;
     position: fixed;
     bottom: 12%;
-    left: 26%;
 }

@@ -12,7 +12,7 @@
     width: 100%;
     line-height: 30px;
     border-radius: 5px;
-    cursor: pointer;
+    cursor: text;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
     padding-left: 40px;
   }

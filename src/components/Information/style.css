@@ -1,7 +1,7 @@
 .information-container {
     height: 100vh;
     background-color: #f7f7f7;
-    padding: 20px;
+    padding: 20px 30px;
     overflow: hidden;
 }
 
@@ -15,6 +15,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    margin-bottom: 15px;
 }
 
 .calendar {
@@ -40,4 +41,21 @@
 .calendar p {
     font-size: 12px;
     color: #919699;
+}
+
+.information-container--main {
+    display: flex;
+    flex-direction: row;
+}
+
+.information-container--main__left {
+    display: flex;
+    width: 60%;
+    align-items: center;
+}
+
+.information-container--main__right {
+    display: flex;
+    width: 40%;
+    align-items: center;
 }

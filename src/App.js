@@ -1,6 +1,6 @@
 import './App.css';
 
-import DashboardBus from './pages/DashboardBus.page';
+import DashboardBus from './pages';
 
 function App() {
   return (

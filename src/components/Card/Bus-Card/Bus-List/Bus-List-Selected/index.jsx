@@ -1,6 +1,6 @@
 import React from 'react'
 
-import './BusSelected.style.css'
+import './style.css'
 
 function BusSelected(props) {
     return (

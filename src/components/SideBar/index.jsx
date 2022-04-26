@@ -1,11 +1,11 @@
 import React, {useState} from 'react';
 
-import BusSelector from '../BusSelector/BusSelector.component';
-import SearchBox from '../SearchBox/SearchBox.component'
+import BusSelector from '../Card/Bus-Card/Bus-List';
+import SearchBox from '../SearchBox'
 
-import './SideBar.style.css';
+import './style.css';
 
-function SideBar() {
+function SideBar(props) {
   const [searchField, setSearchField] = useState('');
   const [buses] = useState([
     {
@@ -13,7 +13,29 @@ function SideBar() {
       destination: 'Cibiru - Cicaheum',
       stopTime: '09:20 - 09.45',
       stopLocation: 'Jl.Jendral Sudirman',
-      isSelected: false
+      isSelected: false,
+      data: [
+        {
+          date: ['Fri', 'Apr', '08', '2022', '20:17:18', 'GMT+0700', '(Western Indonesia Time)'],
+          passengers: 300,
+        },
+        {
+          date: ['Sat', 'Apr', '09', '2022', '20:17:18', 'GMT+0700', '(Western Indonesia Time)'],
+          passengers: 260,
+        },
+        {
+          date: ['Sun', 'Apr', '10', '2022', '20:17:18', 'GMT+0700', '(Western Indonesia Time)'],
+          passengers: 310,
+        },
+        {
+          date: ['Mon', 'Apr', '11', '2022', '20:17:18', 'GMT+0700', '(Western Indonesia Time)'],
+          passengers: 290,
+        },
+        {
+          date: ['Tue', 'Apr', '12', '2022', '20:17:18', 'GMT+0700', '(Western Indonesia Time)'],
+          passengers: 275,
+        }
+      ]
     },
     {
       busNumber: 2,
@@ -96,7 +118,7 @@ function SideBar() {
       </div>
       
       <div className="card_container">
-        <BusSelector buses={filteredBus} setSearchField={setSearchField} searchField={searchField}/>
+        <BusSelector buses={filteredBus} setSearchField={setSearchField} searchField={searchField} />
       </div>
       
     </div>

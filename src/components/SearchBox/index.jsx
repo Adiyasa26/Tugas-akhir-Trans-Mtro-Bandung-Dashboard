@@ -1,6 +1,6 @@
 import React from 'react'
 
-import './SearchBox.style.css'
+import './style.css'
 
 import SearchIcon from '../../icon/Search.svg'
 
