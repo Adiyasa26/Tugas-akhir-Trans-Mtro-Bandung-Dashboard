@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import CardBus from '../Bus';
 import BusSelected from './Bus-List-Selected';
@@ -6,26 +6,26 @@ import BusSelected from './Bus-List-Selected';
 import './style.css'
 
 function BusSelector(props) {
-  const {buses, searchField, setSearchField} = props;
-  const [selectedBus, setSelectedBus] = useState(1);
+  const {buses, state, search, selectedBus} = props;
 
   const onCLickSelector = () => {
     buses.map(bus => {
-      return bus.busNumber === selectedBus ? setSearchField(bus.destination) : ''
+      return bus.busNumber === state.selectedBus.busNumber ? search(bus.destination) : ''
     })
   }
 
   const onCLickClearSearch = () => {
-      return setSearchField('')
+      return search('')
   }
 
   return (
     <div className="bus-selector--container">
-      <BusSelected className={` clear-search item ${(searchField) ? '' : 'hide'}`} busIsSelected={selectedBus} onClickSelectedBus={onCLickSelector} onClickClearSearch={onCLickClearSearch}/>
+      <BusSelected className={`clear-search item ${(state.search) ? '' : 'hide'}`} busIsSelected={state.selectedBus.busNumber} onClickSelectedBus={onCLickSelector} onClickClearSearch={onCLickClearSearch}/>
+
       {buses.map((bus) => {
         return (
-          <CardBus key={bus.busNumber} bus={bus} onClick={() => {setSelectedBus(bus.busNumber)}}
-            isSelected={bus.busNumber === selectedBus} />
+          <CardBus key={bus.busNumber} bus={bus} onClick={() => selectedBus(bus)}
+            isSelected={bus.busNumber === state.selectedBus.busNumber} />
         )
       })}
     </div>

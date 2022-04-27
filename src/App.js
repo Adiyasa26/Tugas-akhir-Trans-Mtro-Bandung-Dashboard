@@ -1,11 +1,11 @@
 import './App.css';
 
-import DashboardBus from './pages';
+import Page from './pages';
 
 function App() {
   return (
     <div>
-      <DashboardBus />
+      <Page />
     </div>
   );
 }

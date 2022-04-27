@@ -6,7 +6,7 @@ import SearchBox from '../SearchBox'
 import './style.css';
 
 function SideBar(props) {
-  const [searchField, setSearchField] = useState('');
+  const { state, search, selectedBus, startDate } = props
   const [buses] = useState([
     {
       busNumber: 1,
@@ -103,10 +103,10 @@ function SideBar(props) {
   ]);
 
   const handleChange = (e) => {
-    setSearchField(e.target.value);
+    search(e.target.value);
   }
 
-  const filteredBus = buses.filter(bus => bus.destination.toLowerCase().includes(searchField.toLowerCase()))
+  const filteredBus = buses.filter(bus => bus.destination.toLowerCase().includes(state.search.toLowerCase()))
 
   return (
     <div className="sidebar">
@@ -118,7 +118,7 @@ function SideBar(props) {
       </div>
       
       <div className="card_container">
-        <BusSelector buses={filteredBus} setSearchField={setSearchField} searchField={searchField} />
+        <BusSelector buses={filteredBus} selectedBus={selectedBus} search={search} state={state} startDate={startDate}/>
       </div>
       
     </div>
