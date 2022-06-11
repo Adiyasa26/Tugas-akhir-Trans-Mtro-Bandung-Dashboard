@@ -1,11 +1,12 @@
-import {createStore, applyMiddleware} from "redux";
-import thunk from 'redux-thunk';
-import reducers from './reducer'
+import { compose, createStore, applyMiddleware } from 'redux';
+import logger from 'redux-logger';
 
-export const store = createStore(
-    reducers,
-    {},
-    applyMiddleware(thunk)
-)
+import reducers from './reducers';
 
-export * as action from "./action"
+const middlewares = [logger]
+
+const composedEnhancers = compose(applyMiddleware(...middlewares))
+
+export const store = createStore(reducers, {}, composedEnhancers);
+
+export * as action from './action';

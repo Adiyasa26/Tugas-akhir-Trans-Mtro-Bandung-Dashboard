@@ -8,7 +8,7 @@ import './style.css'
 import CalendarIcon from '../../icon/Calendar.svg'
 
 function Information(props) {
-    const {state, selectedBus, startDate} = props
+    const {state, startDate} = props
     const [searchDate, setSearchDate] = useState(state.startDate)
 
     useEffect(() => {
@@ -30,7 +30,7 @@ function Information(props) {
         </div>
         <div className="information-container--main">
             <div className="information-container--main__left">
-                <CardList date={searchDate} />
+                <CardList date={searchDate} state={state}/>
             </div>
             <div className="information-container--main__right">
                 <div>1</div>
@@ -38,5 +38,4 @@ function Information(props) {
         </div>
     </div>
 }
-
 export default Information

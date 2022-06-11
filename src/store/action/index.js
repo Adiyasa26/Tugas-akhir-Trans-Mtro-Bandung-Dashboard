@@ -1,26 +1,14 @@
-export const selectedBus = (payload) => {
-    return(dispatch) => {
-        dispatch({
-            type: 'BUS_SELECTED',
-            payload: payload
-        });
-    }
-}
+import { createAction } from '../../utils/reducer/reducer.utils';
+import { ACTION_TYPES } from '../type';
 
-export const startDate = (payload) => {
-    return(dispatch) => {
-        dispatch({
-            type: 'DATE_STARTED',
-            payload: payload
-        });
-    }
-}
+export const setCurrentUser = payload =>
+  createAction(ACTION_TYPES.SET_CURRENT_USER, payload);
 
-export const search = (payload) => {
-    return(dispatch) => {
-        dispatch({
-            type: 'SEARCH',
-            payload: payload
-        });
-    }
-}
+export const setSelectedBus = payload =>
+  createAction(ACTION_TYPES.SET_BUS_SELECTED, payload);
+
+export const setStartDate = payload =>
+  createAction(ACTION_TYPES.SET_DATE_STARTED, payload);
+
+export const setSearch = payload =>
+  createAction(ACTION_TYPES.SET_SEARCH, payload);
