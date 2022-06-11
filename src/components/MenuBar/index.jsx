@@ -17,8 +17,8 @@ function MenuBar() {
 
   return (
     <div className="menubar">
-      <Keluar className={`popup-container ${!isClicked ? 'hide' : ''}`}/>
       <div className="logo">
+        <Keluar className={`popup-container ${!isClicked ? 'hide' : ''}`}/>
         <img src={UserLogo} alt="User Logo" onClick={() => setIsClicked(!isClicked)}/>
       </div>
       <div className="menu-container">

@@ -17,13 +17,13 @@
 }
 
 .logo {
-  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .logo img{
+  position: relative;
   min-width: 20px;
   max-width: 40px;
   transition: 0.2s ease-in-out;
