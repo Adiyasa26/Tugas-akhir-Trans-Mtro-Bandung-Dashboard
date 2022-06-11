@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './style.css';
+import './style.scss';
 
 import TimeProgressThin from '../../../../icon/Time_progress_thin.svg';
 import PinLight from '../../../../icon/Pin_light_thin.svg';
