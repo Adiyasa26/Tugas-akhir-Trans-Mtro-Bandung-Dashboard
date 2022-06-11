@@ -1,17 +1,15 @@
-import React from 'react'
+import React from 'react';
 
-import SignInForm from '../../components/Sign-in-form'
-import SignUnForm from '../../components/Sign-up-form'
+import SignInForm from '../../components/Sign-in-form';
 
-import './style.scss'
+import './style.scss';
 
-function authentication () {
-    return (
-        <div className='authentication-container'>
-            <SignInForm />
-            <SignUnForm />
-        </div>
-    )
-}
+const Authentication = () => {
+  return (
+    <div className="authentication-container">
+      <SignInForm />
+    </div>
+  );
+};
 
-export default authentication
+export default Authentication;

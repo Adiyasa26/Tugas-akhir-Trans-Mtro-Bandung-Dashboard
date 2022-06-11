@@ -19,8 +19,7 @@ const defaultFormFields = {
 const SignInForm = () => {
   const [formFields, setFormFields] = useState(defaultFormFields);
   const { email, password } = formFields;
-
-  console.log(formFields);
+  
   const resetFormFields = () => {
     setFormFields(defaultFormFields);
   };
@@ -32,17 +31,19 @@ const SignInForm = () => {
       await signInUserAuthWithEmailAndPassword(email, password);
       resetFormFields();
     } catch (error) {
-        if(error.code ===  'auth/wrong-password' || error.code === 'auth/user-not-found') {
-            alert('Invalid email or password')
-        }
-        console.log(error)
+      if (
+        error.code === 'auth/wrong-password' ||
+        error.code === 'auth/user-not-found'
+      ) {
+        alert('Invalid email or password');
+      }
+      console.log(error);
     }
   };
 
   const SignInWithGoogle = async () => {
     const { user } = await signInWithGooglePopup();
-    const response = await createUserDocumentFromAuth(user);
-    console.log(response)
+    await createUserDocumentFromAuth(user);
   };
 
   const handleChange = event => {
@@ -52,36 +53,40 @@ const SignInForm = () => {
   };
 
   return (
-    <div className="sign-up-container">
-      <h2>Sudah punya akun?</h2>
-      <span>Masuk dengan email and password</span>
+    <div className="sign-in-page">
+      <h2>Dashboard Trans Metro Bandung</h2>
+      <div className="sign-in-container">
+        <form onSubmit={handleSubmit}>
+          <FormInput
+            label="Email"
+            type="email"
+            required
+            name="email"
+            value={email}
+            onChange={handleChange}
+          />
 
-      <form onSubmit={handleSubmit}>
-        <FormInput
-          label="Email"
-          type="email"
-          required
-          name="email"
-          value={email}
-          onChange={handleChange}
-        />
+          <FormInput
+            label="Password"
+            type="password"
+            required
+            name="password"
+            value={password}
+            onChange={handleChange}
+          />
 
-        <FormInput
-          label="Password"
-          type="password"
-          required
-          name="password"
-          value={password}
-          onChange={handleChange}
-        />
-
-        <div className="buttons-container">
-          <Button type="submit">Masuk</Button>
-          <Button type="button" buttonType="google" onClick={SignInWithGoogle}>
-            Masuk dengan Google
-          </Button>
-        </div>
-      </form>
+          <div className="buttons-container">
+            <Button type="submit">Masuk</Button>
+            <Button
+              type="button"
+              buttonType="google"
+              onClick={SignInWithGoogle}
+            >
+              Masuk dengan Google
+            </Button>
+          </div>
+        </form>
+      </div>
     </div>
   );
 };

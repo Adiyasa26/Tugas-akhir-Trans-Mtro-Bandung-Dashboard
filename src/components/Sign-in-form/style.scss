@@ -1,26 +1,30 @@
-.sign-up-container {
-    display: flex;
-    flex-direction: column;
-    // background-color: #ffffff;
-    // padding: 50px;
-    // border-radius: 10px;
-    // box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.2);
+.sign-in-page {
+  display: flex;
+  flex-direction: column;
 
-    h2 {
-        margin: 10px 0;
-        text-align: center;
-    }
+  h2 {
+    margin: 10px 0;
+    text-align: center;
+    margin-bottom: 50px;
+  }
 
-    span {
-        text-align: center;
-    }
-}
+  .sign-in-container {
+    background-color: #ffffff;
+    padding-top: 10px;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 50px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.2);
+    width: 400px;
+  }
 
-.buttons-container {
+  .buttons-container {
     display: flex;
     flex-direction: column;
 
     .google-sign-in {
-        margin-top: 10px;
+      margin-top: 10px;
     }
+  }
 }
