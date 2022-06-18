@@ -42,63 +42,52 @@ function SideBar(props) {
       destination: 'Cicaheum - Cibereum',
       stopTime: '09:10 - 09.20',
       stopLocation: 'Jl.Soekarno Hatta',
-      isSelected: false
+      isSelected: false,
+      data: [
+        {
+          date: [],
+          passengers: 0,
+        },
+      ]
     },
     {
       busNumber: 3,
       destination: 'Cibereum - Cicaheum',
       stopTime: '09:10 - 09.20',
       stopLocation: 'Jl.Soekarno Hatta',
-      isSelected: false
+      isSelected: false,
+      data: [
+        {
+          date: [],
+          passengers: 0,
+        },
+      ]
     },
     {
       busNumber: 4,
       destination: 'Cicaheum - Cibiru',
       stopTime: '09:10 - 09.20',
       stopLocation: 'Jl.Soekarno Hatta',
-      isSelected: false
+      isSelected: false,
+      data: [
+        {
+          date: [],
+          passengers: 0,
+        },
+      ]
     },
     {
       busNumber: 5,
       destination: 'Cicaheum - Leuwi Pandjang',
       stopTime: '09:10 - 09.20',
       stopLocation: 'Jl.Soekarno Hatta',
-      isSelected: false
-    },
-    {
-      busNumber: 6,
-      destination: 'Leuwi Pandjang - Cicaheum',
-      stopTime: '09:10 - 09.20',
-      stopLocation: 'Jl.Soekarno Hatta',
-      isSelected: false
-    },
-    {
-      busNumber: 7,
-      destination: 'Cicaheum - Dago',
-      stopTime: '09:10 - 09.20',
-      stopLocation: 'Jl.Soekarno Hatta',
-      isSelected: false
-    },
-    {
-      busNumber: 8,
-      destination: 'Dago - Cicaheum',
-      stopTime: '09:10 - 09.20',
-      stopLocation: 'Jl.Soekarno Hatta',
-      isSelected: false
-    },
-    {
-      busNumber: 9,
-      destination: 'Cicaheum - Buah Batu',
-      stopTime: '09:10 - 09.20',
-      stopLocation: 'Jl.Soekarno Hatta',
-      isSelected: false
-    },
-    {
-      busNumber: 10,
-      destination: 'Buah Batu - Cicaheum',
-      stopTime: '09:10 - 09.20',
-      stopLocation: 'Jl.Soekarno Hatta',
-      isSelected: false
+      isSelected: false,
+      data: [
+        {
+          date: [],
+          passengers: 0,
+        },
+      ]
     },
   ]);
 
