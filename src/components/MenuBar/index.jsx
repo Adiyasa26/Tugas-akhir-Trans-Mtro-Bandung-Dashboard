@@ -23,7 +23,7 @@ function MenuBar() {
       </div>
       <div className="menu-container">
         <a
-          href="#main"
+          href="main"
           onClick={() => {
             if (homeActive === false) {
               setHomeActive(true);
@@ -38,7 +38,7 @@ function MenuBar() {
           />
         </a>
         <a
-          href="#prediction"
+          href="prediction"
           onClick={() => {
             if (predictionActive === false) {
               setHomeActive(false);
