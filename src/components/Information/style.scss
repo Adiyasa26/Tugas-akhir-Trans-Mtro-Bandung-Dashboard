@@ -1,0 +1,37 @@
+.information-container {
+  height: 100vh;
+  background-color: #f7f7f7;
+  padding: 20px 30px;
+  overflow: hidden;
+  width: 100%;
+
+  & h1 {
+    color: #3e4345;
+    font-size: 20px;
+  }
+
+  &--header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+  }
+
+  &--main {
+    display: flex;
+    flex-direction: row;
+  }
+
+  &--main__left {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 5px;
+  }
+
+  &--main__right {
+    display: flex;
+    align-items: center;
+  }
+}
