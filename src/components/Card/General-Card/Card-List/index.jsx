@@ -1,18 +1,16 @@
-import React from 'react'
+import React from 'react';
 
-import Card from '../Card'
-
-import './style.css'
+import './style.scss';
 
 function CardList(props) {
-    console.log(props)
-    return (
-        <div className="card-list--container">
-            <Card tag={`tanggal ${props.date[2]}`} amount="300"/>
-            <Card tag={`bulan ${props.date[1]}`} amount="90000"/>
-            <Card tag={`tahun ${props.date[3]}`} amount="108000"/>
-        </div>
-    )
+  const { title, children } = props;
+
+  return (
+    <div className="card-list--container">
+      <div className="card-list--container-header">{title}</div>
+      <div className="card-list--container-main">{children}</div>
+    </div>
+  );
 }
 
 export default CardList;

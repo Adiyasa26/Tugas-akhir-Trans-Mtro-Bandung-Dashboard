@@ -1,0 +1,35 @@
+.universal-card-container {
+    background-color: #ffffff;
+    padding: 15px;
+    border-radius: 5px;
+    color: #3E4345;
+    margin-right: 5px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+
+    &:last-child {
+        margin-right: 0px;
+    }
+    
+    &--header{
+        margin-bottom: 10px;
+    }
+    
+    &--header > * {
+        margin-bottom: 5px;
+
+        & h3 {
+            font-size: 12px !important;
+        }
+    }
+    
+    & p {
+        font-size: 10px !important;
+    }
+    
+   &--main h1 {
+        font-size: 16px !important;
+    }
+    
+}
+
