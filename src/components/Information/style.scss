@@ -28,10 +28,13 @@
     align-items: center;
     justify-content: center;
     margin: 0 5px;
+    flex-grow: 1;
   }
 
   &--main__right {
     display: flex;
     align-items: center;
+    justify-content: center;
+    flex-grow: 1;
   }
 }
