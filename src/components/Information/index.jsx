@@ -3,6 +3,8 @@ import React, { useState, useEffect } from 'react';
 import Passengers from '../Card/General-Card/Card-List/Passengers';
 import Mask from '../Card/General-Card/Card-List/Mask';
 import CalendarContainer from '../Calendar-container';
+import MyResponsiveCalendar from '../Calendar-chart';
+import { data } from '../Calendar-chart/data';
 
 import './style.scss';
 
@@ -38,6 +40,7 @@ function Information(props) {
           <Mask date={searchDate} state={state} />
         </div>
       </div>
+      <MyResponsiveCalendar data = {data}/>
     </div>
   );
 }
