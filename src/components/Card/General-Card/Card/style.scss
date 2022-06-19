@@ -1,36 +1,60 @@
 .universal-card-container {
-    flex-grow: 1;
-    background-color: #ffffff;
-    padding: 15px;
-    border-radius: 5px;
-    color: #3E4345;
-    margin-right: 5px;
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  flex-grow: 1;
+  background-color: #ffffff;
+  padding: 15px;
+  border-radius: 5px;
+  color: #3e4345;
+  margin-right: 5px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
 
-    &:last-child {
-        margin-right: 0px;
-    }
-    
-    &--header{
-        margin-bottom: 10px;
+  &:last-child {
+    margin-right: 0px;
+  }
 
-        & > * {
-            margin-bottom: 5px;
-    
-        }
+  &--header {
+    margin-bottom: 10px;
 
-        & h3 {
-            font-size: 12px !important;
-        }
+    & > * {
+      margin-bottom: 5px;
     }
-    
-    & p {
-        font-size: 10px !important;
+
+    & h3 {
+      font-size: 12px !important;
     }
-    
-   &--main h1 {
-        font-size: 16px !important;
+  }
+
+  & p {
+    font-size: 10px !important;
+  }
+
+  &--main h1 {
+    font-size: 16px !important;
+  }
+
+  &.cold {
+    background-color: #003856;
+    color: #ffffff;
+
+    & h1 {
+        color: #ffffff; 
     }
-    
+  }
+
+  &.neutral {
+    background-color: #0369A1;
+    color: #ffffff;
+
+    & h1 {
+        color: #ffffff; 
+    }
+  }
+
+  &.warm {
+    background-color: #EB8707;
+    color: #ffffff;
+
+    & h1 {
+        color: #ffffff; 
+    }
+  }
 }
-
