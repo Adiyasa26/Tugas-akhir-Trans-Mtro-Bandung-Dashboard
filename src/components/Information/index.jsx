@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 import Passengers from '../Card/General-Card/Card-List/Passengers';
-import Mask from '../Card/General-Card/Card-List/Mask';
+import Mask from '../Card/General-Card/Card-List/Healthcare';
 import CalendarContainer from '../Calendar-container';
 import MyResponsiveCalendar from '../Calendar-chart';
 import { data } from '../Calendar-chart/data';
