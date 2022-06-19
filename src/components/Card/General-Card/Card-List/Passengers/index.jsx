@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import CardList from '..';
 import Card from '../../Card';
 
-const Passenger = (props) => {
+const Passenger = props => {
   const [passengers, setPassengers] = useState(0);
   const { state, date } = props;
   const { selectedBus } = state;
@@ -21,13 +21,31 @@ const Passenger = (props) => {
   return (
     <CardList
       className="card-list--container"
-      title={'Prediksi Jumlah Penumpang Berdasarkan Protokol Kesehatan'}
+      title={'Total Penumpang Berdasarkan Protokol Kesehatan'}
     >
-      <Card key="tanggal" tag={`tanggal ${date[2]}`} amount={passengers} />
-      <Card key="bulan" tag={`bulan ${date[1]}`} amount="90000" />
-      <Card key="tahun" tag={`tahun ${date[3]}`} amount="108000" />
+      <Card
+        key="tanggal"
+        headerTitle={'Total Penumpang'}
+        headerTag={`pada tanggal ${date[2]}`}
+        mainTitle={passengers}
+        mainTag={'penumpang'}
+      />
+      <Card
+        key="bulan"
+        headerTitle={'Total Penumpang'}
+        headerTag={`pada bulan ${date[1]}`}
+        mainTitle="90000"
+        mainTag={'penumpang'}
+      />
+      <Card
+        key="tahun"
+        headerTitle={'Total Penumpang'}
+        headerTag={`pada tahun ${date[3]}`}
+        mainTitle="108000"
+        mainTag={'penumpang'}
+      />
     </CardList>
   );
-}
+};
 
 export default Passenger;
