@@ -2,17 +2,11 @@ import React from 'react';
 
 import './style.scss';
 
-const HEALTH_CARE_CARD_CLASSES = {
-    cold: 'cold',
-    neutral: 'neutral',
-    warm: 'warm'
-}
-
 function Card(props) {
-  const { key, headerTitle, headerTag, mainTitle, mainTag, colorType } = props;
+  const { key, headerTitle, headerTag, mainTitle, mainTag } = props;
 
   return (
-    <div key={key} className={`universal-card-container ${colorType ? HEALTH_CARE_CARD_CLASSES[colorType] : ``}`}>
+    <div key={key} className="universal-card-container">
       <div className="universal-card-container--header">
         <h3>{headerTitle}</h3>
         <p>{headerTag}</p>

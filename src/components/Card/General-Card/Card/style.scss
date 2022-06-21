@@ -6,6 +6,7 @@
   color: #3e4345;
   margin-right: 5px;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  height: 100%;
 
   &:last-child {
     margin-right: 0px;
@@ -29,32 +30,5 @@
 
   &--main h1 {
     font-size: 16px !important;
-  }
-
-  &.cold {
-    background-color: #003856;
-    color: #ffffff;
-
-    & h1 {
-        color: #ffffff; 
-    }
-  }
-
-  &.neutral {
-    background-color: #0369A1;
-    color: #ffffff;
-
-    & h1 {
-        color: #ffffff; 
-    }
-  }
-
-  &.warm {
-    background-color: #EB8707;
-    color: #ffffff;
-
-    & h1 {
-        color: #ffffff; 
-    }
   }
 }
