@@ -1,8 +1,7 @@
 import { ACTION_TYPES } from '../type';
 
 const INITIAL_STATE = {
-  busNumber: 1,
-  isSelected: false,
+  busNumber: 0,
   data: [
     {
       date: [],
