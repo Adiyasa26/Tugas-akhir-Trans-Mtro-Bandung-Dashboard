@@ -20,19 +20,36 @@
 
   &--main {
     display: flex;
+    flex-direction: column;
+  }
+
+  &--main__header {
+    display: flex;
     flex-direction: row;
-  }
-
-  &--main__left {
-    display: flex;
-    align-items: center;
     justify-content: center;
-    margin: 0 5px;
-    flex-grow: 1;
+    margin-bottom: 10px;
+
+    &-left {
+      display: flex;
+      flex-direction: column;
+      margin-right: 5px;
+      flex-grow: 1;
+
+      &-flex {
+        display: flex;
+        flex-direction: row;
+      }
+    }
+
+    &-right {
+      display: flex;
+      width: 100%;
+    }
   }
 
-  &--main__right {
+  &--main__content {
     display: flex;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
     flex-grow: 1;

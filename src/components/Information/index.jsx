@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 
+import BiodataBus from '../Card/General-Card/Card-List/Biodata-bus';
+import RatingsViewer from '../Card/General-Card/Card-List/RatingsViewer';
+import FeedbackViewer from '../Card/General-Card/Card-List/FeedbackViewer';
 import Passengers from '../Card/General-Card/Card-List/Passengers';
 import Mask from '../Card/General-Card/Card-List/Healthcare';
 import CalendarContainer from '../Calendar-container';
-import MyResponsiveCalendar from '../Calendar-chart';
-import { data } from '../Calendar-chart/data';
+import Revenue from '../Card/General-Card/Card-List/Revenue';
 
 import './style.scss';
 
@@ -33,14 +35,23 @@ function Information(props) {
         <CalendarContainer state={state} startDate={startDate} />
       </div>
       <div className="information-container--main">
-        <div className="information-container--main__left">
-          <Passengers date={searchDate} state={state} />
+        <div className="information-container--main__header">
+          <div className="information-container--main__header-left">
+            <div className="information-container--main__header-left-flex">
+              <BiodataBus date={searchDate} state={state} />
+              <RatingsViewer date={searchDate} state={state} />
+            </div>
+            <Revenue date={searchDate} state={state} />
+          </div>
+          <div className="information-container--main__header-right">
+            <FeedbackViewer date={searchDate} state={state} />
+          </div>
         </div>
-        <div className="information-container--main__right">
+        <div className="information-container--main__content">
+          <Passengers date={searchDate} state={state} />
           <Mask date={searchDate} state={state} />
         </div>
       </div>
-      <MyResponsiveCalendar data = {data}/>
     </div>
   );
 }
