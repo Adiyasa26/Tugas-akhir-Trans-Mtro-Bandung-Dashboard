@@ -22,25 +22,26 @@ const Passenger = props => {
     <CardList
       className="card-list--container"
       title={'Total Penumpang Berdasarkan Protokol Kesehatan'}
+      cardListType={"passengers"}
     >
       <Card
         key="tanggal"
-        headerTitle={'Total Penumpang'}
-        headerTag={`pada tanggal ${date[2]}`}
+        headerTitle={'Penumpang'}
+        headerTag={`tanggal ${date[2]}`}
         mainTitle={passengers}
         mainTag={'penumpang'}
       />
       <Card
         key="bulan"
-        headerTitle={'Total Penumpang'}
-        headerTag={`pada bulan ${date[1]}`}
+        headerTitle={'Penumpang'}
+        headerTag={`bulan ${date[1]}`}
         mainTitle="90000"
         mainTag={'penumpang'}
       />
       <Card
         key="tahun"
-        headerTitle={'Total Penumpang'}
-        headerTag={`pada tahun ${date[3]}`}
+        headerTitle={'Penumpang'}
+        headerTag={`tahun ${date[3]}`}
         mainTitle="108000"
         mainTag={'penumpang'}
       />
