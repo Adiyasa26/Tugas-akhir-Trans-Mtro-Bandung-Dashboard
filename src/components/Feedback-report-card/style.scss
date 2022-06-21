@@ -1,0 +1,39 @@
+.feedback-report-card--container {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+
+  &-photo {
+    display: inline-block;
+    background-color: #0369a1;
+    width: 25px;
+    height: 25px;
+    padding: 17px;
+    border-radius: 50%;
+    position: relative;
+    margin-right: 12px;
+
+    & h1 {
+      color: #ffffff !important;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 16px !important;
+    }
+  }
+
+  &-review {
+    margin-bottom: 15px;
+
+    & h2 {
+      color: #3e4345;
+      font-size: 14px;
+    }
+
+    & p {
+      font-size: 12px;
+      text-align: justify;
+    }
+  }
+}
