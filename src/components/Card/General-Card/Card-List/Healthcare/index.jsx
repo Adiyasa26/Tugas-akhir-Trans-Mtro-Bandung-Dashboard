@@ -20,30 +20,31 @@ const Mask = props => {
   }, [date, selectedBus.data]);
 
   return (
-    <CardList className="card-list--container" title={'Protokol Kesehatan'}>
+    <CardList
+      className="card-list--container"
+      title={'Protokol Kesehatan'}
+      cardListType={'healthcare'}
+    >
       <Card
         key="mask"
         headerTitle={'Bermasker'}
-        headerTag={`tanggal ${date[2] + ' ' + date[1] + ' ' + date[3]} `}
+        headerTag={`${date[2] + ' ' + date[1] + ' ' + date[3]} `}
         mainTitle={'2000'}
         mainTag={'penumpang'}
-        colorType={"cold"}
       />
       <Card
         key="non-mask"
-        headerTitle={'Tidak Bermasker'}
-        headerTag={`tanggal ${date[2] + ' ' + date[1] + ' ' + date[3]} `}
+        headerTitle={'Tanpa masker'}
+        headerTag={`${date[2] + ' ' + date[1] + ' ' + date[3]} `}
         mainTitle={'3000'}
         mainTag={'penumpang'}
-        colorType={"neutral"}
       />
       <Card
         key="suhu"
-        headerTitle={'Suhu Rata-rata'}
-        headerTag={`tanggal ${date[2] + ' ' + date[1] + ' ' + date[3]} `}
+        headerTitle={'Suhu'}
+        headerTag={`${date[2] + ' ' + date[1] + ' ' + date[3]} `}
         mainTitle={'36.7'}
         mainTag={'celcius'}
-        colorType={"warm"}
       />
     </CardList>
   );
