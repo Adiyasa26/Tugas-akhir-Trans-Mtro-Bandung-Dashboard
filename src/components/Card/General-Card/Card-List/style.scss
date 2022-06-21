@@ -1,20 +1,216 @@
 .card-list--container {
   display: flex;
   flex-direction: column;
-  padding: 5px;
+  padding: 15px 5px 5px 5px;
   border-radius: 5px;
   border: solid 2px #f2f2f2;
   flex-grow: 1;
+  position: relative;
 
   &-header {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
     color: #919699;
     font-size: 12px;
     text-align: center;
-    margin-bottom: 10px;
+    white-space: nowrap;
   }
 
   &-main {
     display: flex;
     flex-direction: row;
+    flex-grow: 1;
+  }
+
+  &.biodata {
+    margin-bottom: 10px;
+    .biodata-bus--container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      color: #3e4345;
+      padding: 20px;
+      border-radius: 5px;
+      background-color: #ffffff;
+      box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+
+      &-header {
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 10px;
+
+        &__left {
+          display: inline-block;
+          width: 35px;
+          height: 35px;
+          padding: 25px;
+          border-radius: 50%;
+          margin-right: 20px;
+          background-color: #e0f2fe;
+          position: relative;
+
+          h1 {
+            font-size: 20px;
+            color: #0369a1 !important;
+            position: absolute;
+            top: 50%;
+            right: 50%;
+            transform: translate(50%, -50%);
+          }
+        }
+
+        &__right {
+          display: flex;
+          align-items: center;
+          &-header {
+            font-size: 18px;
+            font-weight: 900;
+          }
+        }
+      }
+
+      &-main {
+        color: #5e6366;
+        font-size: 14px;
+        font-weight: 600;
+        text-align: left !important;
+        margin-bottom: 10px;
+      }
+
+      &-footer {
+        text-align: justify;
+        width: 100%;
+
+        p {
+          font-size: 11px;
+
+          &:first-child {
+            margin-bottom: 10px;
+          }
+        }
+      }
+    }
+  }
+
+  &.feedback-viewer {
+    .feedback-viewer--container {
+      display: flex;
+      flex-direction: column;
+      border-radius: 5px;
+      padding: 15px;
+      background-color: #ffffff;
+      color: #3e4345;
+      box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+      align-items: flex-start;
+      flex-grow: 1;
+
+      &-content {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+
+        &__header h1 {
+          font-size: 16px;
+          margin-top: 10px;
+          margin-bottom: 20px;
+        }
+
+        &__content {
+          display: flex;
+          flex-direction: column;
+          flex-grow: 1;
+          padding: 0 10px;
+          max-height: 350px;
+          overflow-y: scroll;
+        }
+      }
+    }
+  }
+
+  &.ratings-viewer {
+    margin-left: 5px;
+    margin-bottom: 10px;
+    .ratings-viewer--container {
+      display: flex;
+      flex-direction: column;
+      border-radius: 5px;
+      padding: 15px;
+      background-color: #ffffff;
+      box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+      align-items: center;
+      justify-content: center;
+
+      &-header {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+
+        &__left {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          color: #ffcb45;
+          margin-right: 20px;
+
+          & h1 {
+            font-size: 30px;
+            color: #ffcb45;
+            flex-grow: 1;
+          }
+
+          & p {
+            font-size: 11px;
+            text-align: center;
+          }
+        }
+
+        &__right {
+          .star-container-feedback {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+
+            & p {
+              margin-left: 10px;
+              font-size: 12px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &.passengers {
+    &:first-child {
+      margin-right: 5px;
+    }
+  }
+
+  &.revenue {
+    display: flex;
+    font-size: 12px;
+    color: #3e4345;
+
+    .card-list--container {
+      &-revenue {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 5px;
+        border-radius: 5px;
+        background-color: #ffffff;
+        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+        flex-grow: 1;
+
+        & > * {
+          margin: 5px;
+        }
+      }
+    }
   }
 }
