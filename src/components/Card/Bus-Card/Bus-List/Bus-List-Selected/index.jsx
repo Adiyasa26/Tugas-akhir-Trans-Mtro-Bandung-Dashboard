@@ -1,18 +1,19 @@
-import React from 'react'
+import React from 'react';
 
-import './style.css'
+import './style.scss';
 
 function BusSelected(props) {
-    return (
-        <div className="selected-bus--container">
-            <div className="selected-bus item" onClick={props.onClickSelectedBus}>
-                {props.busIsSelected}
-            </div>
-            <div className={props.className} onClick={props.onClickClearSearch}>
-                &times;
-            </div>
-        </div>
-    )
+  const { onClickSelectedBus, onClickClearSearch, className, busIsSelected } = props;
+  return (
+    <div className="selected-bus--container">
+      <div className="selected-bus item" onClick={onClickSelectedBus}>
+        {busIsSelected}
+      </div>
+      <div className={className} onClick={onClickClearSearch}>
+        &times;
+      </div>
+    </div>
+  );
 }
 
 export default BusSelected;
