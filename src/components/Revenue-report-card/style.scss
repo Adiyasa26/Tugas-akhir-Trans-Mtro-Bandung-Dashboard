@@ -1,0 +1,15 @@
+.revenue-report-card--container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    
+    &:hover {
+        background-color: #003856;
+        color: #ffffff;
+        border-radius: 5px;
+        transform: scale(1.01);
+        transition: 0.15s ease-in-out;
+    }
+}
