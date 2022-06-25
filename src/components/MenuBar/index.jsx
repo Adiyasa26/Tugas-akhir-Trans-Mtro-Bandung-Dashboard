@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 import Keluar from '../SignOut';
 import './style.css';
@@ -22,8 +23,8 @@ function MenuBar() {
         <img src={UserLogo} alt="User Logo" onClick={() => setIsClicked(!isClicked)}/>
       </div>
       <div className="menu-container">
-        <a
-          href="main"
+        <Link
+          to="/"
           onClick={() => {
             if (homeActive === false) {
               setHomeActive(true);
@@ -36,9 +37,9 @@ function MenuBar() {
             src={homeActive === true ? HomeLogoActive : HomeLogo}
             alt="Logo Home"
           />
-        </a>
-        <a
-          href="prediction"
+        </Link>
+        <Link
+          to="prediction"
           onClick={() => {
             if (predictionActive === false) {
               setHomeActive(false);
@@ -51,7 +52,7 @@ function MenuBar() {
             src={!predictionActive === false ? TimeProgressActive : TimeProgress}
             alt="Logo Prediction"
           />
-        </a>
+        </Link>
       </div>
       <div className="unduh-data">
         <img src={LogoUnduh} alt="Logo Unduh" />
