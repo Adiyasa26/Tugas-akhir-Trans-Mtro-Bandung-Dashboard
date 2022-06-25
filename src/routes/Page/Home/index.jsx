@@ -1,37 +1,58 @@
-import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { action } from '../../../store';
+import React, { useState, useEffect } from 'react';
 
-import Menubar from '../../../components/MenuBar';
-import SideBar from '../../../components/SideBar';
-import Information from '../../../components/Information';
+import BiodataBus from '../../../components/Card/General-Card/Card-List/Biodata-bus';
+import RatingsViewer from '../../../components/Card/General-Card/Card-List/RatingsViewer';
+import FeedbackViewer from '../../../components/Card/General-Card/Card-List/FeedbackViewer';
+import Passengers from '../../../components/Card/General-Card/Card-List/Passengers';
+import Mask from '../../../components/Card/General-Card/Card-List/Healthcare';
+import CalendarContainer from '../../../components/Calendar-container';
+import Revenue from '../../../components/Card/General-Card/Card-List/Revenue';
 
-import './style.css';
+import './style.scss';
 
-function Home() {
-  const dispatch = useDispatch();
+const Home = (props) => {
+  const { state, startDate } = props;
+  const [searchDate, setSearchDate] = useState(state.startDate);
 
-  const state = useSelector(state => state);
-
-  const setSearch = (payload) => dispatch(action.setSearch(payload));
-  const setSelectedBus = (payload) => dispatch(action.setSelectedBus(payload));
-  const setStartDate = (payload) => dispatch(action.setStartDate(payload));
+  useEffect(() => {
+    let date_value = state.startDate.toString().split(' ');
+    let new_date_value = [
+      date_value[0],
+      date_value[1],
+      date_value[2],
+      date_value[3],
+      date_value[4],
+      date_value[5],
+      date_value[6] + ' ' + date_value[7] + ' ' + date_value[8],
+    ];
+    setSearchDate(new_date_value);
+  }, [state.startDate]);
 
   return (
-    <div>
-      <div className="grid">
-        <Menubar className="menubar" />
-        <SideBar
-          className="sidebar"
-          search={setSearch}
-          state={state}
-          selectedBus={setSelectedBus}
-          startDate={setStartDate}
-        />
-        <Information state={state} startDate={setStartDate} />
+    <div className="information-container">
+      <div className="information-container--header">
+        <h1>Dashboard</h1>
+        <CalendarContainer state={state} startDate={startDate} />
+      </div>
+      <div className="information-container--main">
+        <div className="information-container--main__header">
+          <div className="information-container--main__header-left">
+            <div className="information-container--main__header-left-flex">
+              <BiodataBus date={searchDate} state={state} />
+              <RatingsViewer date={searchDate} state={state} />
+            </div>
+            <Revenue date={searchDate} state={state} />
+          </div>
+          <div className="information-container--main__header-right">
+            <FeedbackViewer date={searchDate} state={state} />
+          </div>
+        </div>
+        <div className="information-container--main__content">
+          <Passengers date={searchDate} state={state} />
+          <Mask date={searchDate} state={state} />
+        </div>
       </div>
     </div>
   );
 }
-
 export default Home;
