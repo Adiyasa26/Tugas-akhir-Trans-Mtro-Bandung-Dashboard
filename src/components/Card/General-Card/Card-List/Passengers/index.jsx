@@ -25,21 +25,21 @@ const Passenger = props => {
       cardListType={"passengers"}
     >
       <Card
-        key="tanggal"
+        name={"tanggal"}
         headerTitle={'Penumpang'}
         headerTag={`tanggal ${date[2]}`}
         mainTitle={passengers}
         mainTag={'penumpang'}
       />
       <Card
-        key="bulan"
+        name={"bulan"}
         headerTitle={'Penumpang'}
         headerTag={`bulan ${date[1]}`}
         mainTitle="90000"
         mainTag={'penumpang'}
       />
       <Card
-        key="tahun"
+        name={"tahun"}
         headerTitle={'Penumpang'}
         headerTag={`tahun ${date[3]}`}
         mainTitle="108000"

@@ -26,17 +26,17 @@ const Revenue = props => {
     >
       <div className="card-list--container-revenue">
         <RevenueReportCard
-          key="harian"
+          name={"harian"}
           title={'Harian'}
           revenue={'Rp2.000.000,00'}
         />
         <RevenueReportCard
-          key="bulanan"
+          name={"bulanan"}
           title={'Bulanan'}
           revenue={'Rp60.000.000,00'}
         />
         <RevenueReportCard
-          key="tahunan"
+          name={"tahunan"}
           title={'Tahunan'}
           revenue={'Rp720.000.000,00'}
         />

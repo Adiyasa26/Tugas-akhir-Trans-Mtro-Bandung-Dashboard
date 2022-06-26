@@ -3,10 +3,10 @@ import React from 'react';
 import './style.scss';
 
 function Card(props) {
-  const { key, headerTitle, headerTag, mainTitle, mainTag } = props;
-
+  const { name, headerTitle, headerTag, mainTitle, mainTag } = props;
+  
   return (
-    <div key={key} className="universal-card-container">
+    <div key={name} className="universal-card-container">
       <div className="universal-card-container--header">
         <h3>{headerTitle}</h3>
         <p>{headerTag}</p>

@@ -26,21 +26,21 @@ const Mask = props => {
       cardListType={'healthcare'}
     >
       <Card
-        key="mask"
+        name={"mask"}
         headerTitle={'Bermasker'}
         headerTag={`${date[2] + ' ' + date[1] + ' ' + date[3]} `}
         mainTitle={'2000'}
         mainTag={'penumpang'}
       />
       <Card
-        key="non-mask"
+        name={"non-mask"}
         headerTitle={'Tanpa masker'}
         headerTag={`${date[2] + ' ' + date[1] + ' ' + date[3]} `}
         mainTitle={'3000'}
         mainTag={'penumpang'}
       />
       <Card
-        key="suhu"
+        name={"suhu"}
         headerTitle={'Suhu'}
         headerTag={`${date[2] + ' ' + date[1] + ' ' + date[3]} `}
         mainTitle={'36.7'}
