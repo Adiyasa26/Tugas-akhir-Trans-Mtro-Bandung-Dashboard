@@ -15,7 +15,7 @@ function CardBus(props) {
       </div>
       <div className="bus--right">
         <div className="title">
-          <h1>{`Armada ${bus.busNumber}`}</h1>
+          <h1>{`Koridor ${bus.busNumber}`}</h1>
           <h2>{bus.destination}</h2>
         </div>
 
