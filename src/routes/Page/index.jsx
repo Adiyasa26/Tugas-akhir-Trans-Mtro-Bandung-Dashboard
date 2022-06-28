@@ -6,6 +6,7 @@ import { action } from '../../store';
 import Menubar from '../../components/MenuBar';
 import SideBar from '../../components/SideBar';
 import Home from './Home';
+import Prediction from './Prediction'
 
 import './style.scss';
 
@@ -26,13 +27,17 @@ const Page = () => {
           className="sidebar"
           search={setSearch}
           state={state}
-          selectedBus={setSelectedBus}
           startDate={setStartDate}
+          selectedBus={setSelectedBus}
         />
         <Routes>
           <Route
             index
             element={<Home state={state} startDate={setStartDate} />}
+          />
+          <Route
+            path="/prediction"
+            element={<Prediction state={state} startDate={setStartDate} />}
           />
         </Routes>
       </div>
