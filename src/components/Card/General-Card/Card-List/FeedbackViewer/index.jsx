@@ -1,12 +1,24 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
 import CardList from '..';
-import Star from '../../../../Ratings/Star';
 import FeedbackReportCard from '../../../../Feedback-report-card';
 
-const FeedbackViewer = props => {
-  const { state, date } = props;
-  const { selectedBus } = state;
+import { getFeedback } from '../../../../../utils/firebase/Firebase.utils';
+import { setFeedbackUserMap } from '../../../../../store/action';
+
+const FeedbackViewer = () => {
+  const feedbackUser = useSelector((state) => state.feedbackUser);
+  
+  const dispatch = useDispatch();
+  
+  useEffect(() => {
+    const getFeedbackUserMap = async () => {
+      const feedbackMap = await getFeedback();
+      dispatch(setFeedbackUserMap(feedbackMap))
+    }
+    getFeedbackUserMap();
+  }, [dispatch]);
 
   return (
     <CardList
@@ -20,13 +32,10 @@ const FeedbackViewer = props => {
             <h1>Review Pengguna</h1>
           </div>
           <div className="feedback-viewer--container-content__content">
-            <FeedbackReportCard starCount={3}/>
-            <FeedbackReportCard starCount={4}/>
-            <FeedbackReportCard starCount={4}/>
-            <FeedbackReportCard starCount={5}/>
-            <FeedbackReportCard starCount={4}/>
-            <FeedbackReportCard starCount={4}/>
-            <FeedbackReportCard starCount={4}/>
+            {feedbackUser.map(user => {
+              const { displayName, star, feedback } = user;
+              return <FeedbackReportCard key={displayName} reviewer={displayName} starCount={star} feedback={feedback}/>
+            })}
           </div>
         </div>
       </div>
