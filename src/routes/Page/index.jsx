@@ -16,7 +16,7 @@ const Page = () => {
   const state = useSelector(state => state);
 
   const setSearch = payload => dispatch(action.setSearch(payload));
-  const setSelectedBus = payload => dispatch(action.setSelectedBus(payload));
+  const setBusesData = payload => dispatch(action.setBusesData(payload));
   const setStartDate = payload => dispatch(action.setStartDate(payload));
 
   return (
@@ -28,7 +28,7 @@ const Page = () => {
           search={setSearch}
           state={state}
           startDate={setStartDate}
-          selectedBus={setSelectedBus}
+          setBusesData={setBusesData}
         />
         <Routes>
           <Route

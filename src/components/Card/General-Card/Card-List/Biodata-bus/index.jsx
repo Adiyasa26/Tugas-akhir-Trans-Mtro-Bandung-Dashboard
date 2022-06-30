@@ -4,7 +4,8 @@ import CardList from '..';
 
 const BiodataBus = props => {
   const { state } = props;
-  const { selectedBus } = state;
+  const { busesData } = state;
+  const { selectedBus } = busesData
 
   return (
     <CardList
