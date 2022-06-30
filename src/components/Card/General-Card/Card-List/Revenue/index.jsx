@@ -1,23 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 
 import CardList from '..';
 import RevenueReportCard from '../../../../Revenue-report-card';
 
 const Revenue = props => {
-  const [passengers, setPassengers] = useState(0);
-  const { state, date } = props;
-  const { selectedBus } = state;
-
-  useEffect(() => {
-    let amountDay;
-    if (selectedBus.data[0].date[2] === date[2]) {
-      amountDay = selectedBus.data[0].passengers;
-      setPassengers(amountDay);
-    } else {
-      setPassengers(0);
-    }
-  }, [date, selectedBus.data]);
-
   return (
     <CardList
       className="card-list--container"
