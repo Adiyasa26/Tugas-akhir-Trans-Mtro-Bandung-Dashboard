@@ -53,12 +53,11 @@ const RatingsViewer = () => {
   }
 
   const totalFeedback = feedbackUser.length;
-  const percentageOfFiveStars = (totalFiveStars / totalFeedback) * 100;
-  const percentageOfFourStars = (totalFourStars / totalFeedback) * 100;
-  const percentageOfThreeStars = (totalThreeStars / totalFeedback) * 100;
-  const percentageOfTwoStars = (totalTwoStars / totalFeedback) * 100;
-  const percentageOfOneStars = (totalOneStars / totalFeedback) * 100;
-
+  const percentageOfFiveStars = Math.round(Math.floor((totalFiveStars / totalFeedback) * 100));
+  const percentageOfFourStars = Math.round((totalFourStars / totalFeedback) * 100);
+  const percentageOfThreeStars = Math.round((totalThreeStars / totalFeedback) * 100);
+  const percentageOfTwoStars = Math.round((totalTwoStars / totalFeedback) * 100);
+  const percentageOfOneStars = Math.round(Math.ceil((totalOneStars / totalFeedback) * 100));
 
   const calculationOfRatings = ((totalFiveStars * 5) + (totalFourStars * 4) + (totalThreeStars * 3) + (totalTwoStars * 2) + (totalOneStars * 1)) / totalFeedback
 
@@ -71,7 +70,7 @@ const RatingsViewer = () => {
       <div className="ratings-viewer--container">
         <div className="ratings-viewer--container-header">
           <div className="ratings-viewer--container-header__left">
-            <h1>{calculationOfRatings}</h1>
+            <h1>{calculationOfRatings.toFixed(1)}</h1>
             <p>Rating Aplikasi</p>
           </div>
           <div className="ratings-viewer--container-header__right">
