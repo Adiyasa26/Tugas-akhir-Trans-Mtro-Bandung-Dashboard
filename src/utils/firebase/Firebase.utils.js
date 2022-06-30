@@ -17,6 +17,7 @@ import {
   writeBatch,
   query,
   getDocs,
+  onSnapshot
 } from 'firebase/firestore';
 
 const firebaseConfig = {
@@ -52,6 +53,24 @@ export const addCollectionAndDocuments = async (collectionKey, objectsToAdd) => 
   })
 
   await batch.commit()
+}
+
+export const getBusInformation = async () => {
+  const collectionRef = collection(db, 'buses')
+  const q = query(collectionRef);
+
+  const querySnapshot = await getDocs(q);
+
+  return querySnapshot.docs.map(doc => [doc.id, doc.data()]);
+}
+
+export const getBusData = async (docid) => {
+  const collectionRef = collection(db, 'buses', docid, 'data')
+  const q = query(collectionRef);
+
+  const querySnapshot = await getDocs(q);
+
+  return querySnapshot.docs.map(doc => doc.data());
 }
 
 export const getFeedback = async () => {
