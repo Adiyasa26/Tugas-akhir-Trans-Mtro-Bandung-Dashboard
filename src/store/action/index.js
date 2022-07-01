@@ -16,6 +16,9 @@ export const setBusDocument = payload =>
 export const setBusData = payload =>
   createAction(ACTION_TYPES.SET_BUS_DATA, payload);
 
+export const setRevenueData = payload =>
+  createAction(ACTION_TYPES.SET_REVENUE_DATA, payload);
+
 export const setStartDate = payload =>
   createAction(ACTION_TYPES.SET_DATE_STARTED, payload);
 

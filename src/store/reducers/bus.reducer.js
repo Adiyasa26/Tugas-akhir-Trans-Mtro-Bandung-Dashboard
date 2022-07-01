@@ -3,6 +3,11 @@ import { ACTION_TYPES } from '../type';
 const INITIAL_STATE = {
   busDocument: [],
   busData: [],
+  busRevenue: {
+    today: 0,
+    month: 0,
+    year: 0,
+  },
   selectedBus: {
     busNumber: 0,
     destination: '',
@@ -32,6 +37,11 @@ const busReducer = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         busData: payload
+      };
+    case ACTION_TYPES.SET_REVENUE_DATA:
+      return {
+        ...state,
+        busRevenue: payload
       };
     default:
       return state;
