@@ -1,9 +1,26 @@
 import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 
 import CardList from '..';
 import RevenueReportCard from '../../../../Revenue-report-card';
+import { setRevenueData } from '../../../../../store/action';
 
-const Revenue = props => {
+const Revenue = () => {
+  const passengersMap = useSelector(state => state.passengersData.passengers);
+  const revenueMap = useSelector(state => state.busesData.busRevenue);
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    const price = 3000;
+
+    const revenueToday = price * passengersMap.today;
+    const revenueMonth = price * passengersMap.thismonth;
+    const revenueYear = price * passengersMap.thisyear;
+
+    dispatch(setRevenueData({today: revenueToday, month: revenueMonth, year: revenueYear}))
+  }, [dispatch, passengersMap.today, passengersMap.thismonth, passengersMap.thisyear]);
+
   return (
     <CardList
       className="card-list--container"
@@ -14,17 +31,17 @@ const Revenue = props => {
         <RevenueReportCard
           name={"harian"}
           title={'Harian'}
-          revenue={'Rp2.000.000,00'}
+          revenue={revenueMap.today}
         />
         <RevenueReportCard
           name={"bulanan"}
           title={'Bulanan'}
-          revenue={'Rp60.000.000,00'}
+          revenue={revenueMap.month}
         />
         <RevenueReportCard
           name={"tahunan"}
           title={'Tahunan'}
-          revenue={'Rp720.000.000,00'}
+          revenue={revenueMap.year}
         />
       </div>
     </CardList>
