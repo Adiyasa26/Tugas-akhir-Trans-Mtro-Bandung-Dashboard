@@ -54,7 +54,7 @@
   color: #0284c7;
 }
 
-.unduh-data {
+.log-out {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -62,18 +62,18 @@
   white-space: nowrap;
 
   padding: 7px;
-  background-color: #e0f2fe;
+  background-color: #ff0000;
   border-radius: 5px;
   cursor: pointer;
   transition: 0.2s ease-in-out;
 }
 
-.unduh-data img {
+.log-out img {
   min-width: 20px;
   max-width: 30px;
 }
 
-.unduh-data:hover {
+.log-out:hover {
   transform: scale(1.2);
   transition: 0.1s ease-in-out;;
 }

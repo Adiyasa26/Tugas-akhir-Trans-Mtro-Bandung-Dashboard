@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-import Keluar from '../SignOut';
+import { SignOutUser } from '../../utils/firebase/Firebase.utils';
+
 import './style.css';
 
 import HomeLogoActive from '../../icon/Home.svg';
@@ -9,18 +10,16 @@ import TimeProgressActive from '../../icon/Time_progress.svg';
 import HomeLogo from '../../icon/Home_gray.svg';
 import TimeProgress from '../../icon/Time_progress_grey.svg';
 import UserLogo from '../../icon/User_box_fill.svg';
-import LogoUnduh from '../../icon/Download.svg';
+import SignOutLogo from '../../icon/Sign_out_squre_light.svg';
 
 function MenuBar() {
   const [homeActive, setHomeActive] = useState(true);
   const [predictionActive, setPredictionActive] = useState(false);
-  const [isClicked, setIsClicked] = useState(false);
 
   return (
     <div className="menubar">
       <div className="logo">
-        <Keluar className={`popup-container ${!isClicked ? 'hide' : ''}`}/>
-        <img src={UserLogo} alt="User Logo" onClick={() => setIsClicked(!isClicked)}/>
+        <img src={UserLogo} alt="User Logo" />
       </div>
       <div className="menu-container">
         <Link
@@ -38,7 +37,7 @@ function MenuBar() {
             alt="Logo Home"
           />
         </Link>
-        <Link
+        {/* <Link
           to="prediction"
           onClick={() => {
             if (predictionActive === false) {
@@ -52,10 +51,10 @@ function MenuBar() {
             src={!predictionActive === false ? TimeProgressActive : TimeProgress}
             alt="Logo Prediction"
           />
-        </Link>
+        </Link> */}
       </div>
-      <div className="unduh-data">
-        <img src={LogoUnduh} alt="Logo Unduh" />
+      <div className="log-out" onClick={SignOutUser}>
+        <img src={SignOutLogo} alt="Logo log-out" />
       </div>
     </div>
   );
