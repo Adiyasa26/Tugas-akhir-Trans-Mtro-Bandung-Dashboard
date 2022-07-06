@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import {
   createUserDocumentFromAuth,
@@ -14,7 +14,7 @@ import Page from './routes/Page';
 import Authentication from './routes/Authentication';
 
 function App() {
-  const currentUser = useSelector(state => state.currentUser);
+  const currentUser = useSelector(state => state.userData.currentUser);
 
   const dispatch = useDispatch();
 
@@ -31,12 +31,6 @@ function App() {
 
   return (
     <Routes>
-      <Route
-        index
-        element={
-          currentUser ? <Page /> : <Authentication />
-        }
-      />
       {currentUser ? (
         <Route path="/*" element={<Page />} />
       ) : (
