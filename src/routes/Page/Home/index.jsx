@@ -1,18 +1,40 @@
 import React, { useState, useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 
-import BiodataBus from '../../../components/Card/General-Card/Card-List/Biodata-bus';
-import RatingsViewer from '../../../components/Card/General-Card/Card-List/RatingsViewer';
-import FeedbackViewer from '../../../components/Card/General-Card/Card-List/FeedbackViewer';
-import Passengers from '../../../components/Card/General-Card/Card-List/Passengers';
-import Mask from '../../../components/Card/General-Card/Card-List/Healthcare';
-import CalendarContainer from '../../../components/Calendar-container';
-import Revenue from '../../../components/Card/General-Card/Card-List/Revenue';
+import AdminPage from './admin';
+import UserPage from './user';
 
-import './style.scss';
+import { getAccount } from '../../../utils/firebase/Firebase.utils';
 
-const Home = (props) => {
+import { setUserRole } from '../../../store/action';
+
+const Home = props => {
   const { state, startDate } = props;
   const [searchDate, setSearchDate] = useState(state.startDate);
+
+  const currentUser = useSelector(state => state.userData.currentUser);
+  const userRoleData = useSelector(state => state.userData.userRole);
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    const getAccountsData = async () => {
+      const accountsDataMap = await getAccount();
+      for (let userCount = 0; userCount < accountsDataMap.length; userCount++) {
+        if (
+          accountsDataMap[userCount][0] === currentUser.uid &&
+          accountsDataMap[userCount][1].role &&
+          accountsDataMap[userCount][1].role === 'admin'
+        ) {
+          dispatch(setUserRole(accountsDataMap[userCount][1].role));
+          break;
+        } else {
+          dispatch(setUserRole('user'));
+        }
+      }
+    };
+    getAccountsData();
+  }, [dispatch, currentUser.uid]);
 
   useEffect(() => {
     let date_value = state.startDate.toString().split(' ');
@@ -29,30 +51,17 @@ const Home = (props) => {
   }, [state.startDate]);
 
   return (
-    <div className="information-container">
-      <div className="information-container--header">
-        <h1>Dashboard</h1>
-        <CalendarContainer state={state} startDate={startDate} />
-      </div>
-      <div className="information-container--main">
-        <div className="information-container--main__header">
-          <div className="information-container--main__header-left">
-            <div className="information-container--main__header-left-flex">
-              <BiodataBus date={searchDate} state={state} />
-              <RatingsViewer date={searchDate} state={state} />
-            </div>
-            <Revenue date={searchDate} state={state} />
-          </div>
-          <div className="information-container--main__header-right">
-            <FeedbackViewer date={searchDate} state={state} />
-          </div>
-        </div>
-        <div className="information-container--main__content">
-          <Passengers date={searchDate} state={state} />
-          <Mask date={searchDate} state={state} />
-        </div>
-      </div>
+    <div>
+      {userRoleData === 'admin' ? (
+        <AdminPage
+          state={state}
+          startDate={startDate}
+          searchDate={searchDate}
+        />
+      ) : (
+        <UserPage state={state}/>
+      )}
     </div>
   );
-}
+};
 export default Home;

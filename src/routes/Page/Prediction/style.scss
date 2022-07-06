@@ -1,0 +1,40 @@
+.prediction-container {
+  height: 100vh;
+  background-color: #f7f7f7;
+  padding: 15px 20px;
+  overflow: hidden;
+  width: 100%;
+
+  & h1 {
+    color: #3e4345;
+    font-size: 20px;
+  }
+
+  &--header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+  }
+
+  &--main {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &--main__header {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+
+  &--main__content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+  }
+}

@@ -32,13 +32,13 @@ const Page = () => {
         />
         <Routes>
           <Route
-            index
+             path="/"
             element={<Home state={state} startDate={setStartDate} />}
           />
-          <Route
+          {/* <Route
             path="/prediction"
             element={<Prediction state={state} startDate={setStartDate} />}
-          />
+          /> */}
         </Routes>
       </div>
     </div>

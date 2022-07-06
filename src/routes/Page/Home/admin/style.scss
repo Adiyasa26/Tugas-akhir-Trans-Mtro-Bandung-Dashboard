@@ -1,4 +1,4 @@
-.information-container {
+.admin-container {
   height: 100vh;
   background-color: #f7f7f7;
   padding: 15px 20px;
@@ -29,7 +29,7 @@
     justify-content: center;
     margin-bottom: 10px;
 
-    &-left {
+    &--left {
       display: flex;
       flex-direction: column;
       margin-right: 5px;
@@ -38,10 +38,11 @@
       &-flex {
         display: flex;
         flex-direction: row;
+        margin-bottom: 10px;
       }
     }
 
-    &-right {
+    &--right {
       display: flex;
       width: 100%;
     }
