@@ -4,6 +4,7 @@ import './style.scss';
 
 const CARD_LIST_TYPE_CLASSES = {
   biodata: "biodata",
+  biodatauser: "biodata-user",
   ratingsviewer: "ratings-viewer",
   feedbackviewer: "feedback-viewer",
   healthcare: 'health-care',

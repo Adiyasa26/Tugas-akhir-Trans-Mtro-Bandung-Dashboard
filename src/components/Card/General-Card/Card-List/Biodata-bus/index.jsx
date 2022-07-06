@@ -13,21 +13,21 @@ const BiodataBus = props => {
       title={'Biodata Bus'}
       cardListType={'biodata'}
     >
-      <div className="biodata-bus--container">
-        <div className="biodata-bus--container-header">
-          <div className="biodata-bus--container-header__left">
+      <div className="biodata--container">
+        <div className="biodata--container-header">
+          <div className="biodata--container-header__left">
             <h1>{selectedBus.busNumber}</h1>
           </div>
-          <div className="biodata-bus--container-header__right">
-            <div className="biodata-bus--container-header__right-header">
+          <div className="biodata--container-header__right">
+            <div className="biodata--container-header__right-header">
               {`JALUR TMB KORIDOR ${selectedBus.busNumber}`}
             </div>
           </div>
         </div>
-        <div className="biodata-bus--container-main">
+        <div className="biodata--container-main">
           {selectedBus.destination}
         </div>
-        <div className="biodata-bus--container-footer">
+        <div className="biodata--container-footer">
           <p>
             {selectedBus.detailInformation}
           </p>
