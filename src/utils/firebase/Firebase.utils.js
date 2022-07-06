@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom';
 import { initializeApp } from 'firebase/app';
 import {
   getAuth,
@@ -17,7 +18,6 @@ import {
   writeBatch,
   query,
   getDocs,
-  onSnapshot
 } from 'firebase/firestore';
 
 const firebaseConfig = {
@@ -53,6 +53,15 @@ export const addCollectionAndDocuments = async (collectionKey, objectsToAdd) => 
   })
 
   await batch.commit()
+}
+
+export const getAccount = async () => {
+  const collectionRef = collection(db, 'users')
+  const q = query(collectionRef);
+
+  const querySnapshot = await getDocs(q);
+
+  return querySnapshot.docs.map(doc => [doc.id, doc.data()]);
 }
 
 export const getBusInformation = async () => {
@@ -110,6 +119,28 @@ export const createUserDocumentFromAuth = async (
   return userDocRef;
 };
 
+export const createUserFeedback = async (
+  user,
+  star,
+  feedback
+  ) => {
+  if (!user) return;
+
+  const feedbackDocRef = doc(db, 'feedback', user.uid);
+
+  const { displayName } = user;
+
+  try {
+    await setDoc(feedbackDocRef, {
+      displayName,
+      star,
+      feedback
+    });
+  } catch (error) {
+    console.log('error creating the feedback.', error.message);
+  }
+}
+
 export const createUserAuthWithEmailAndPassword = async (email, password) => {
   if (!email || !password) return;
 
@@ -122,7 +153,9 @@ export const signInUserAuthWithEmailAndPassword = async (email, password) => {
   return signInWithEmailAndPassword(auth, email, password);
 };
 
-export const signOutUser = async () => await signOut(auth);
+export const SignOutUser = async () => {
+  await signOut(auth)
+};
 
 export const onAuthStateChangedListener = callback =>
   onAuthStateChanged(auth, callback);

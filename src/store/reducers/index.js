@@ -8,7 +8,7 @@ import searchReducer from './search.reducer';
 import passengersReducer from './passengers.reducer'
 
 const reducers = combineReducers({
-  currentUser: userReducer,
+  userData: userReducer,
   feedbackUser: feedbackReducer,
   busesData: busReducer,
   startDate: dateReducer,

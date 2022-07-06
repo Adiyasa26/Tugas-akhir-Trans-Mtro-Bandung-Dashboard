@@ -4,6 +4,9 @@ import { ACTION_TYPES } from '../type';
 export const setCurrentUser = payload =>
   createAction(ACTION_TYPES.SET_CURRENT_USER, payload);
 
+export const setUserRole = payload =>
+  createAction(ACTION_TYPES.SET_USER_ROLE, payload);
+
 export const setFeedbackUserMap = payload =>
   createAction(ACTION_TYPES.SET_FEEDBACK_USER, payload);  
 
