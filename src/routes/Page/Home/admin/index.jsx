@@ -1,5 +1,4 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
 
 import BiodataBus from '../../../../components/Card/General-Card/Card-List/Biodata-bus';
 import RatingsViewer from '../../../../components/Card/General-Card/Card-List/RatingsViewer';
@@ -15,7 +14,6 @@ import './style.scss';
 const AdminPage = props => {
   const { state, startDate, searchDate } = props;
 
-  console.log(state.busesData.selectedBus);
   return (
     <div className="admin-container">
       <div className="admin-container--header">
