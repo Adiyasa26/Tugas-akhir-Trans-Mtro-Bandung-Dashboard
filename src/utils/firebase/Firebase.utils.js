@@ -1,4 +1,3 @@
-import { useNavigate } from 'react-router-dom';
 import { initializeApp } from 'firebase/app';
 import {
   getAuth,
@@ -14,6 +13,7 @@ import {
   doc,
   getDoc,
   setDoc,
+  updateDoc,
   collection,
   writeBatch,
   query,
@@ -21,12 +21,12 @@ import {
 } from 'firebase/firestore';
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAzlPK64z592XZP-HGrMqmf87kETIUXWVY",
-  authDomain: "tmb-telkom.firebaseapp.com",
-  projectId: "tmb-telkom",
-  storageBucket: "tmb-telkom.appspot.com",
-  messagingSenderId: "69494978596",
-  appId: "1:69494978596:web:85407e3e0172fef73bc0b1"
+  apiKey: 'AIzaSyAzlPK64z592XZP-HGrMqmf87kETIUXWVY',
+  authDomain: 'tmb-telkom.firebaseapp.com',
+  projectId: 'tmb-telkom',
+  storageBucket: 'tmb-telkom.appspot.com',
+  messagingSenderId: '69494978596',
+  appId: '1:69494978596:web:85407e3e0172fef73bc0b1',
 };
 
 const app = initializeApp(firebaseConfig);
@@ -42,54 +42,65 @@ export const signInWithGooglePopup = () => signInWithPopup(auth, provider);
 
 export const db = getFirestore();
 
-export const addCollectionAndDocuments = async (collectionKey, objectsToAdd) => {
+export const addCollectionAndDocuments = async (
+  collectionKey,
+  objectsToAdd
+) => {
   const collectionRef = collection(db, collectionKey);
   const batch = writeBatch(db);
 
-  objectsToAdd.forEach((object) => {
-    const docRef = doc(collectionRef, object.title.toLowerCase())
-    batch.set(docRef, object)
+  objectsToAdd.forEach(object => {
+    const docRef = doc(collectionRef, object.title.toLowerCase());
+    batch.set(docRef, object);
+  });
 
-  })
+  await batch.commit();
+};
 
-  await batch.commit()
-}
+export const getMaskData = async () => {
+  const collectionRef = collection(db, 'mask-detection');
+  const q = query(collectionRef);
+
+  const querySnapshot = await getDocs(q);
+
+  return querySnapshot.docs.map(doc => doc.data());
+};
 
 export const getAccount = async () => {
-  const collectionRef = collection(db, 'users')
+  const collectionRef = collection(db, 'users');
   const q = query(collectionRef);
 
   const querySnapshot = await getDocs(q);
 
   return querySnapshot.docs.map(doc => [doc.id, doc.data()]);
-}
+};
 
 export const getBusInformation = async () => {
-  const collectionRef = collection(db, 'buses')
+  const collectionRef = collection(db, 'buses');
   const q = query(collectionRef);
 
   const querySnapshot = await getDocs(q);
 
   return querySnapshot.docs.map(doc => [doc.id, doc.data()]);
-}
+};
 
-export const getBusData = async (docid) => {
-  const collectionRef = collection(db, 'buses', docid, 'data')
+export const getBusData = async docid => {
+  const collectionRef = collection(db, 'buses', docid, 'data');
   const q = query(collectionRef);
 
   const querySnapshot = await getDocs(q);
 
   return querySnapshot.docs.map(doc => doc.data());
-}
+};
 
 export const getFeedback = async () => {
-  const collectionRef = collection(db, 'feedback')
+  const collectionRef = collection(db, 'feedback');
   const q = query(collectionRef);
 
   const querySnapshot = await getDocs(q);
 
   return querySnapshot.docs.map(doc => doc.data());
-}
+};
 
 export const createUserDocumentFromAuth = async (
   userAuth,
@@ -119,11 +130,7 @@ export const createUserDocumentFromAuth = async (
   return userDocRef;
 };
 
-export const createUserFeedback = async (
-  user,
-  star,
-  feedback
-  ) => {
+export const createUserFeedback = async (user, star, feedback) => {
   if (!user) return;
 
   const feedbackDocRef = doc(db, 'feedback', user.uid);
@@ -134,12 +141,38 @@ export const createUserFeedback = async (
     await setDoc(feedbackDocRef, {
       displayName,
       star,
-      feedback
+      feedback,
     });
   } catch (error) {
     console.log('error creating the feedback.', error.message);
   }
-}
+};
+
+export const createMaskNoMaskData = async (date, mask, nomask, id) => {
+  const healthcareDocRef = doc(db, 'buses', 'GTUoz3TEEqT09e8kMHls', 'data', id);
+  const healthcareSnapshot = await getDoc(healthcareDocRef);
+
+  if (!healthcareSnapshot.exists()) {
+    try {
+      await setDoc(healthcareDocRef, {
+        date,
+        mask,
+        nomask,
+      });
+    } catch (error) {
+      console.log('error creating the feedback.', error.message);
+    }
+  } 
+  
+  await updateDoc(healthcareDocRef, {
+    mask,
+    nomask,
+  }).then(function() {
+    console.log("Mask updated");
+  })
+
+  return healthcareDocRef;
+};
 
 export const createUserAuthWithEmailAndPassword = async (email, password) => {
   if (!email || !password) return;
@@ -154,7 +187,7 @@ export const signInUserAuthWithEmailAndPassword = async (email, password) => {
 };
 
 export const SignOutUser = async () => {
-  await signOut(auth)
+  await signOut(auth);
 };
 
 export const onAuthStateChangedListener = callback =>
