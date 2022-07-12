@@ -34,7 +34,7 @@ const FeedbackViewer = () => {
           <div className="feedback-viewer--container-content__content">
             {feedbackUser.map(user => {
               const { displayName, star, feedback } = user;
-              return <FeedbackReportCard key={displayName} reviewer={displayName} starCount={star} feedback={feedback}/>
+              return <FeedbackReportCard reviewer={displayName} starCount={star} feedback={feedback}/>
             })}
           </div>
         </div>
