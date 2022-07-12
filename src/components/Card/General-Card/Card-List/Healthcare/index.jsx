@@ -4,8 +4,9 @@ import { useSelector, useDispatch } from 'react-redux';
 import CardList from '..';
 import Card from '../../Card';
 import Button from '../../../../Button';
-import { setHealthcareData } from '../../../../../store/action';
+import { setHealthcareData, setBusData} from '../../../../../store/action';
 import {
+  getBusData,
   getMaskData,
   createMaskNoMaskData,
 } from '../../../../../utils/firebase/Firebase.utils';
@@ -18,8 +19,10 @@ const Mask = props => {
 
   const dispatch = useDispatch();
 
+  const busDocumentMap = useSelector(state => state.busesData.busDocument);
   const busDataMap = useSelector(state => state.busesData.busData);
   const healthcareMap = useSelector(state => state.passengersData.healthcare);
+  const selectedBus = useSelector(state => state.busesData.selectedBus);
 
   useEffect(() => {
     const getHealthInformationMap = async () => {
@@ -34,6 +37,22 @@ const Mask = props => {
       const healthInformationMap = await getMaskData();
       setHealthcare(healthInformationMap);
     };
+
+    const getBusDataMap = async () => {
+      const busDataArray = [];
+      for(let data=0; data < busDocumentMap.length; data++) {
+        const busDataMap = await getBusData(busDocumentMap[data][0]);
+        busDataArray.push([busDocumentMap[data][1], busDataMap])
+      }
+
+      busDataArray.map(data => {
+        if (selectedBus.busNumber === data[0].busNumber) {
+          dispatch(setBusData(data[1]));
+        }
+        return true;
+      })
+    }
+    getBusDataMap();
     getHealthInformationMap();
   };
 
