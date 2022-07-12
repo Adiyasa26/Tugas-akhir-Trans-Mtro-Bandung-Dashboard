@@ -48,28 +48,24 @@ const Passenger = props => {
     let passengersThisMonth = 0; 
     let passengersThisYear = 0;
 
-    console.log(date[0])
-    console.log(date[1])
-    console.log(date[2])
-    console.log(date[3])
     for(let count = 0; count < busDataMap.length; count++) {
       if (
-        date[2] === busDataMap[count].date[2] &&
+        date[0] === busDataMap[count].date[0] &&
         date[1] === busDataMap[count].date[1] &&
-        date[3] === busDataMap[count].date[3]
+        date[2] === busDataMap[count].date[2]
         ) {
         passengersToday = busDataMap[count].mask + busDataMap[count].nomask;
       } 
       
       if (
         date[1] === busDataMap[count].date[1] &&
-        date[3] === busDataMap[count].date[3]
+        date[2] === busDataMap[count].date[2]
         ) {
         passengersThisMonth = busDataMap[count].mask + busDataMap[count].nomask + passengersThisMonth;
       }
 
       if (
-        date[3] === busDataMap[count].date[3]
+        date[2] === busDataMap[count].date[2]
         ) {
         passengersThisYear = busDataMap[count].mask + busDataMap[count].nomask + passengersThisYear;
       }
@@ -102,7 +98,7 @@ const Passenger = props => {
       <Card
         name={"tanggal"}
         headerTitle={'Penumpang'}
-        headerTag={`tanggal ${date[2]}`}
+        headerTag={`tanggal ${date[0]}`}
         mainTitle={passengersMap.today}
         mainTag={'penumpang'}
       />
@@ -116,7 +112,7 @@ const Passenger = props => {
       <Card
         name={"tahun"}
         headerTitle={'Penumpang'}
-        headerTag={`tahun ${date[3]}`}
+        headerTag={`tahun ${date[2]}`}
         mainTitle={passengersMap.thisyear}
         mainTag={'penumpang'}
       />
