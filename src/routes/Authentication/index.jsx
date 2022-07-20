@@ -1,13 +1,13 @@
 import React from 'react';
 
-import SignInForm from '../../components/Sign-in-form';
+import SignInWithGoogleContainer from '../../components/signInWithGoogle';
 
 import './style.scss';
 
 const Authentication = () => {
   return (
     <div className="authentication-container">
-      <SignInForm />
+      <SignInWithGoogleContainer />
     </div>
   );
 };
