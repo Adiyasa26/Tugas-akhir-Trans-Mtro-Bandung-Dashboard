@@ -3,6 +3,24 @@
     flex-direction: row;
     margin: 0 auto;
 
+    #star {
+        &1:hover {
+            cursor: pointer;
+        }
+        &2:hover {
+            cursor: pointer;
+        }
+        &3:hover {
+            cursor: pointer;
+        }
+        &4:hover {
+            cursor: pointer;
+        }
+        &5:hover {
+            cursor: pointer;
+        }
+    }
+
     .logo {
         width: 15px;
         margin-right: 10px;
