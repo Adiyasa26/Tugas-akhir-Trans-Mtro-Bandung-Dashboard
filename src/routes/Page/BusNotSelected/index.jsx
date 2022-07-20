@@ -9,7 +9,7 @@ const BusNotSelected = () => {
     <div className="bus-not-selected--container">
         <h2>Trans Metro bandung</h2>
         <img src={BusLogo} alt="Bus Logo" />
-        <h3>Anda belum memilih Bus  yang akan anda lihat informasinya</h3>
+        <h3>Silahkan memilih Bus terlebih dahulu!</h3>
     </div>
   )
 }
