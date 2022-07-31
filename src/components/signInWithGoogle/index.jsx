@@ -2,6 +2,7 @@ import React from 'react';
 
 import {
   signInWithGooglePopup,
+  signInWithGoogleRedirect,
   createUserDocumentFromAuth,
 } from '../../utils/firebase/Firebase.utils';
 
@@ -11,7 +12,7 @@ import './style.scss';
 
 const SignInWithGoogleContainer = () => {
   const SignInWithGoogle = async () => {
-    const { user } = await signInWithGooglePopup();
+    const { user } = await signInWithGoogleRedirect();
     await createUserDocumentFromAuth(user);
   };
 
