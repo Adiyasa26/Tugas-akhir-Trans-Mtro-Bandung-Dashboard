@@ -25,6 +25,9 @@ export const setRevenueData = payload =>
 export const setStartDate = payload =>
   createAction(ACTION_TYPES.SET_DATE_STARTED, payload);
 
+export const setSearchDate = payload => 
+  createAction(ACTION_TYPES.SET_SEARCH_DATE, payload);
+
 export const setSearch = payload =>
   createAction(ACTION_TYPES.SET_SEARCH, payload);
 
