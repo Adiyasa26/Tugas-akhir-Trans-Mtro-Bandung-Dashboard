@@ -4,6 +4,7 @@ import BiodataPenumpang from '../../../../components/Card/General-Card/Card-List
 import FeedbackUser from '../../../../components/Card/General-Card/Card-List/FeedbackUser';
 import RatingsViewer from '../../../../components/Card/General-Card/Card-List/RatingsViewer';
 import BusNotSelected from '../../BusNotSelected';
+import UserSignIn from '../../../../components/Card/General-Card/Card-List/UserSignIn';
 
 import './style.scss';
 
@@ -26,7 +27,11 @@ const UserPage = props => {
               <RatingsViewer date={searchDate} state={state} />
             </div>
             <div className="user-container--main__content--main">
-              <FeedbackUser date={searchDate} state={state} />
+              {state.userData.currentUser ? (
+                <FeedbackUser date={searchDate} state={state} />
+              ) : (
+                <UserSignIn />
+              )}
             </div>
           </div>
         </div>
