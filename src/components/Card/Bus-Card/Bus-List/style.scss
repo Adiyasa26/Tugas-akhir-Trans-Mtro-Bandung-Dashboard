@@ -1,0 +1,19 @@
+.bus-selector--container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  & > img {
+    cursor: pointer;
+    width: 7%;
+    transition: 0.2s ease-in-out;
+
+    &:hover {
+      cursor: pointer;
+      width: 7%;
+      transform: scale(1.2);
+      transition: 0.2s ease-in-out;
+    }
+  }
+}

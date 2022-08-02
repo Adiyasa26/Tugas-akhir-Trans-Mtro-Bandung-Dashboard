@@ -3,7 +3,7 @@ import React from 'react';
 import CardBus from '../Bus';
 import BusSelected from './Bus-List-Selected';
 
-import './style.css'
+import './style.scss'
 
 function BusSelector(props) {
   const {buses, state, search, setBusesData} = props;
