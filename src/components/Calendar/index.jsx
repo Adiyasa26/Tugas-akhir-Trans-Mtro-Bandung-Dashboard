@@ -2,7 +2,7 @@ import React from 'react'
 import DatePicker from "react-datepicker";
 
 import "react-datepicker/dist/react-datepicker.css";
-import "./style.css";
+import "./style.scss";
 
 function Calendar(props) {
     const {state, startDate} = props
