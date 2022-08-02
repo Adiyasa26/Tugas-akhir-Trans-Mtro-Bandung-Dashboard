@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import BusSelector from '../Card/Bus-Card/Bus-List';
 import SearchBox from '../SearchBox';
 
-import './style.css';
+import './style.scss';
 
 function SideBar(props) {
   const { state, search, setBusesData, startDate } = props;
