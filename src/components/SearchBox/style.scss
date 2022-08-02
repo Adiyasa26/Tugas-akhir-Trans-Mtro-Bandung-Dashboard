@@ -2,9 +2,8 @@
   position: relative;
   width: 75%;
   margin-bottom: 10px;
-}
 
-.search {
+  .search {
     -webkit-appearance: none;
     border: none;
     outline: none;
@@ -17,13 +16,14 @@
     padding-left: 40px;
   }
 
-i {
-  position: absolute;
-  top: 35%;
-  left: 10%;
-  transform: translate(-50%);
-}
-
-img {
-  width: 15px;
+  i {
+    position: absolute;
+    top: 35%;
+    left: 10%;
+    transform: translate(-50%);
+  }
+  
+  img {
+    width: 15px;
+  }
 }
