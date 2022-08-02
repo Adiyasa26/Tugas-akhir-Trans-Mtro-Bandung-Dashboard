@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 import { SignOutUser } from '../../utils/firebase/Firebase.utils';
 
-import './style.css';
+import './style.scss';
 
 import HomeLogoActive from '../../icon/Home.svg';
 import TimeProgressActive from '../../icon/Time_progress.svg';
@@ -16,6 +17,20 @@ function MenuBar() {
   const [homeActive, setHomeActive] = useState(true);
   const [predictionActive, setPredictionActive] = useState(false);
 
+  const navigate = useNavigate();
+
+  const state = useSelector(state => state);
+
+  const handleLogout = () => {
+    try {
+      SignOutUser();
+      navigate('/home');
+      window.location.reload();
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <div className="menubar">
       <div className="logo">
@@ -23,7 +38,7 @@ function MenuBar() {
       </div>
       <div className="menu-container">
         <Link
-          to="/"
+          to="/home"
           onClick={() => {
             if (homeActive === false) {
               setHomeActive(true);
@@ -37,8 +52,8 @@ function MenuBar() {
             alt="Logo Home"
           />
         </Link>
-        {/* <Link
-          to="prediction"
+        <Link
+          to="/prediction"
           onClick={() => {
             if (predictionActive === false) {
               setHomeActive(false);
@@ -48,14 +63,20 @@ function MenuBar() {
           className={predictionActive ? 'active' : ''}
         >
           <img
-            src={!predictionActive === false ? TimeProgressActive : TimeProgress}
+            src={
+              !predictionActive === false ? TimeProgressActive : TimeProgress
+            }
             alt="Logo Prediction"
           />
-        </Link> */}
+        </Link>
       </div>
-      <div className="log-out" onClick={SignOutUser}>
-        <img src={SignOutLogo} alt="Logo log-out" />
-      </div>
+      {state.userData.currentUser ? (
+        <div className="log-out" onClick={handleLogout}>
+          <img src={SignOutLogo} alt="Logo log-out" />
+        </div>
+      ) : (
+        <div></div>
+      )}
     </div>
   );
 }
