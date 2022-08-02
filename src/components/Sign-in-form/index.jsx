@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import {
-  signInWithGooglePopup,
-  createUserDocumentFromAuth,
   signInUserAuthWithEmailAndPassword,
 } from '../../utils/firebase/Firebase.utils';
 
@@ -10,6 +9,8 @@ import Button from '../Button';
 import FormInput from '../Form-input';
 
 import './style.scss';
+
+import LogoTmb from '../../icon/Logo_TMB_Trans_Metro_Bandung.jpg'
 
 const defaultFormFields = {
   email: '',
@@ -19,6 +20,8 @@ const defaultFormFields = {
 const SignInForm = () => {
   const [formFields, setFormFields] = useState(defaultFormFields);
   const { email, password } = formFields;
+
+  const navigate = useNavigate();
   
   const resetFormFields = () => {
     setFormFields(defaultFormFields);
@@ -30,6 +33,7 @@ const SignInForm = () => {
     try {
       await signInUserAuthWithEmailAndPassword(email, password);
       resetFormFields();
+      navigate('/home')
     } catch (error) {
       if (
         error.code === 'auth/wrong-password' ||
@@ -41,11 +45,6 @@ const SignInForm = () => {
     }
   };
 
-  const SignInWithGoogle = async () => {
-    const { user } = await signInWithGooglePopup();
-    await createUserDocumentFromAuth(user);
-  };
-
   const handleChange = event => {
     const { name, value } = event.target;
 
@@ -54,8 +53,8 @@ const SignInForm = () => {
 
   return (
     <div className="sign-in-page">
-      <h2>Dashboard Trans Metro Bandung</h2>
       <div className="sign-in-container">
+        <img src={LogoTmb} alt="logo TMB" />
         <form onSubmit={handleSubmit}>
           <FormInput
             label="Email"
@@ -77,13 +76,6 @@ const SignInForm = () => {
 
           <div className="buttons-container">
             <Button type="submit">Masuk</Button>
-            <Button
-              type="button"
-              buttonType="google"
-              onClick={SignInWithGoogle}
-            >
-              Masuk dengan Google
-            </Button>
           </div>
         </form>
       </div>
