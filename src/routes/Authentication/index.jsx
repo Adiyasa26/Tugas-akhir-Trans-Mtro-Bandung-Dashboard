@@ -1,13 +1,16 @@
 import React from 'react';
+import { Routes, Route } from 'react-router-dom';
 
-import SignInWithGoogleContainer from '../../components/signInWithGoogle';
+import AuthenticationAdmin from './admin';
 
 import './style.scss';
 
 const Authentication = () => {
   return (
     <div className="authentication-container">
-      <SignInWithGoogleContainer />
+      <Routes>
+        <Route path='/auth' element={<AuthenticationAdmin />}/>
+      </Routes>
     </div>
   );
 };
