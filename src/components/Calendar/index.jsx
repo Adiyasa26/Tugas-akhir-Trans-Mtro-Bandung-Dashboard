@@ -4,7 +4,7 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import "./style.scss";
 
-function Calendar(props) {
+const Calendar = (props) => {
     const {state, startDate} = props
     
     return (

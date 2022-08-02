@@ -5,7 +5,7 @@ import SearchBox from '../SearchBox';
 
 import './style.scss';
 
-function SideBar(props) {
+const SideBar = (props) => {
   const { state, search, setBusesData, startDate } = props;
   const [buses] = useState([
     {

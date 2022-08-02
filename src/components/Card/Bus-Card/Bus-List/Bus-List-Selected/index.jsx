@@ -2,7 +2,7 @@ import React from 'react';
 
 import './style.scss';
 
-function BusSelected(props) {
+const BusSelected = (props) => {
   const { onClickSelectedBus, onClickClearSearch, className, busIsSelected } = props;
   return (
     <div className="selected-bus--container">

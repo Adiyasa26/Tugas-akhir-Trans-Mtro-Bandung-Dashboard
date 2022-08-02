@@ -12,7 +12,7 @@ const CARD_LIST_TYPE_CLASSES = {
   revenue: 'revenue',
 };
 
-function CardList(props) {
+const CardList = (props) => {
   const { title, children, cardListType } = props;
 
   return (

@@ -2,7 +2,7 @@ import React from 'react';
 
 import './style.scss';
 
-function Card(props) {
+const Card = (props) => {
   const { name, headerTitle, headerTag, mainTitle, mainTag } = props;
   
   return (

@@ -13,7 +13,7 @@ import TimeProgress from '../../icon/Time_progress_grey.svg';
 import UserLogo from '../../icon/User_box_fill.svg';
 import SignOutLogo from '../../icon/Sign_out_squre_light.svg';
 
-function MenuBar() {
+const MenuBar = () => {
   const [homeActive, setHomeActive] = useState(true);
   const [predictionActive, setPredictionActive] = useState(false);
 

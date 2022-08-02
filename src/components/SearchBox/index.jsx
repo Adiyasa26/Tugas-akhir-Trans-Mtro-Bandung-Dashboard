@@ -4,7 +4,7 @@ import './style.scss'
 
 import SearchIcon from '../../icon/Search.svg'
 
-function SearchBox({ placeholder, handleChange }) {
+const SearchBox = ({ placeholder, handleChange }) => {
     return (
       <div className='search--container'>
         <i><img src={SearchIcon} alt="search icon" /></i>

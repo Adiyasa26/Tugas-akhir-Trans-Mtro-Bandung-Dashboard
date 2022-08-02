@@ -5,7 +5,7 @@ import BusSelected from './Bus-List-Selected';
 
 import './style.scss'
 
-function BusSelector(props) {
+const BusSelector = (props) => {
   const {buses, state, search, setBusesData} = props;
 
   const onCLickSelector = () => {
