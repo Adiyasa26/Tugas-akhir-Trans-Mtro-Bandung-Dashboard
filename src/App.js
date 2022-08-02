@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
-import { Routes, Route, useNavigate } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
+import { Routes, Route } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 import {
   createUserDocumentFromAuth,
   onAuthStateChangedListener,
@@ -13,9 +13,7 @@ import './App.scss';
 import Page from './routes/Page';
 import Authentication from './routes/Authentication';
 
-function App() {
-  const currentUser = useSelector(state => state.userData.currentUser);
-
+const App = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -31,12 +29,9 @@ function App() {
 
   return (
     <Routes>
-      {currentUser ? (
-        <Route path="/*" element={<Page />} />
-      ) : (
-        <Route path="/" element={<Authentication />} />
-      )}
-    </Routes> 
+      <Route path="/*" element={<Page />} />
+      <Route path='/admin/*' element={<Authentication />} />
+    </Routes>
   );
 }
 
