@@ -34,7 +34,7 @@ const App = () => {
       <Route index element={<Home />} />
       <Route path="*" element={<NotFound />} />
       <Route path="/trans-metro-bandung/*" element={<Page />} />
-      <Route path='/admin/*' element={<Authentication />} />
+      <Route path='/trans-metro-bandung/admin/*' element={<Authentication />} />
     </Routes>
   );
 }
