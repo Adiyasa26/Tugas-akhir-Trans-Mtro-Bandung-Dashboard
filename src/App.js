@@ -12,6 +12,8 @@ import './App.scss';
 
 import Page from './routes/Page';
 import Authentication from './routes/Authentication';
+import NotFound from './routes/Page/404';
+import Home from './routes/Page/Home'
 
 const App = () => {
   const dispatch = useDispatch();
@@ -29,7 +31,9 @@ const App = () => {
 
   return (
     <Routes>
-      <Route path="/*" element={<Page />} />
+      <Route index element={<Home />} />
+      <Route path="*" element={<NotFound />} />
+      <Route path="/trans-metro-bandung/*" element={<Page />} />
       <Route path='/admin/*' element={<Authentication />} />
     </Routes>
   );
