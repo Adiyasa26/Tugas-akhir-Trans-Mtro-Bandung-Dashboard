@@ -33,7 +33,7 @@ const SignInForm = () => {
     try {
       await signInUserAuthWithEmailAndPassword(email, password);
       resetFormFields();
-      navigate('/home')
+      navigate('/')
     } catch (error) {
       if (
         error.code === 'auth/wrong-password' ||

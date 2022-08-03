@@ -24,7 +24,7 @@ const MenuBar = () => {
   const handleLogout = () => {
     try {
       SignOutUser();
-      navigate('/home');
+      navigate('/');
       window.location.reload();
     } catch (error) {
       console.log(error);
@@ -38,7 +38,7 @@ const MenuBar = () => {
       </div>
       <div className="menu-container">
         <Link
-          to="/home"
+          to="/trans-metro-bandung/home"
           onClick={() => {
             if (homeActive === false) {
               setHomeActive(true);
@@ -53,7 +53,7 @@ const MenuBar = () => {
           />
         </Link>
         <Link
-          to="/prediction"
+          to="/trans-metro-bandung/prediction"
           onClick={() => {
             if (predictionActive === false) {
               setHomeActive(false);
