@@ -1,14 +1,13 @@
 .select-container {
-    margin: 0 10px;
-
-    h1 {
-        font-size: 14px;
+    &--title {
+        font-size: 14px !important;
+        margin-bottom: 5px;
     }
 
     select {
-        width: 100%;
+        min-width: 170px;
         height: 40px;
-        border-radius: 3px;
+        border-radius: 5px;
         border: 2px solid #e2e2e2;
         background-color: #ffffff;
         font-size: 14px;
