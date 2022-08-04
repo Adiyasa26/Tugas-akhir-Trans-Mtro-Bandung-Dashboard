@@ -16,8 +16,14 @@
         opacity: 0.5;
     }
 
+    & a {
+        color: #919699;
+        margin-bottom: 40px;
+    }
+
     & h3 {
         color: #919699;
         margin-bottom: 100px;
+        text-align: center;
     }
 }

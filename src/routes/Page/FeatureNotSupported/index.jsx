@@ -9,7 +9,8 @@ const FeatureNotSupported = () => {
     <div className="feature-not-supported--container">
         <h2>Trans Metro bandung</h2>
         <img src={NotFoundLogo} alt="Bus Logo" />
-        <h3>Mohon maaf. Fitur ini belum tersedia pada bus yang dipilih!</h3>
+        <a href="http://www.freepik.com">Designed by vectorjuice / Freepik</a>
+        <h3>Mohon maaf. Fitur ini belum tersedia pada bus yang dipilih! <br/> Silahkan memilih Bus lainnya. Terimakasih.</h3>
     </div>
   )
 }
