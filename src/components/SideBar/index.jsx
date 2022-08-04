@@ -10,7 +10,7 @@ const SideBar = (props) => {
   const [buses] = useState([
     {
       busNumber: 1,
-      destination: 'Cibiru - Cibereum',
+      destination: 'Cibiru-Cibereum',
       stopTime: '09:10 - 09.20',
       stopLocation: 'Jl.Soekarno Hatta',
       detailInformation:
@@ -26,7 +26,7 @@ const SideBar = (props) => {
     },
     {
       busNumber: 2,
-      destination: 'Cicaheum - Cibereum',
+      destination: 'Cicaheum-Cibereum',
       stopTime: '09:20 - 09.45',
       stopLocation: 'Jl.Jendral Sudirman',
       detailInformation:
@@ -98,7 +98,7 @@ const SideBar = (props) => {
     },
     {
       busNumber: 3,
-      destination: 'Cicaheum - Sarijadi',
+      destination: 'Cicaheum-Sarijadi',
       stopTime: '09:10 - 09.20',
       stopLocation: 'Jl.Soekarno Hatta',
       detailInformation:
@@ -114,7 +114,7 @@ const SideBar = (props) => {
     },
     {
       busNumber: 4,
-      destination: 'Terminal Antapani - Terminal Leuwipanjang',
+      destination: 'Terminal Antapani-Terminal Leuwipanjang',
       stopTime: '09:10 - 09.20',
       stopLocation: 'Jl.Soekarno Hatta',
       detailInformation:
@@ -130,7 +130,7 @@ const SideBar = (props) => {
     },
     {
       busNumber: 5,
-      destination: 'Terminal Antapani - Stasiun Hall',
+      destination: 'Terminal Antapani-Stasiun Hall',
       stopTime: '09:10 - 09.20',
       stopLocation: 'Jl.Soekarno Hatta',
       detailInformation:
