@@ -197,7 +197,7 @@
             margin-bottom: 20px;
           }
 
-          &-user h1{
+          &-user h1 {
             font-size: 16px;
             margin-top: 10px;
             margin-bottom: 20px;
@@ -296,7 +296,6 @@
   }
 
   &.health-care {
-
     .healthcare--container {
       display: flex;
       flex-direction: column;
@@ -334,6 +333,48 @@
 
         & > * {
           margin: 5px;
+        }
+      }
+    }
+  }
+
+  &.filterprediction {
+    form {
+      display: flex;
+      flex-direction: row;
+      flex-grow: 1;
+      justify-content: space-evenly;
+      align-items: center;
+
+      .input-time {
+        h5 {
+          color: #3e4345;
+          font-size: 14px !important;
+          margin-bottom: 5px;
+        }
+
+        input {
+          min-width: 170px;
+          height: 40px;
+          border-radius: 5px;
+          border: 2px solid #e2e2e2;
+          background-color: #ffffff;
+          font-size: 14px;
+        }
+      }
+
+      .button-container-form {
+        display: flex;
+        flex-direction: column;
+
+        h1 {
+          font-size: 14px;
+          margin-bottom: 5px;
+        }
+
+        .button-container.prediction {
+          height: 36px !important;
+          align-items: center;
         }
       }
     }

@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from 'react';
-import { useSelector } from 'react-redux';
+import React, { useState } from 'react';
 
 import CardList from '..';
 import SelectFilter from '../../../../SelectFilter';
@@ -58,7 +57,7 @@ const FilterPrediction = () => {
     >
       <form>
         <div className="input-time">
-          <h5>Jam Keberangkatan</h5>
+          <h5>Jam Berangkat</h5>
           <input
             type="time"
             name="deptime"
@@ -70,7 +69,7 @@ const FilterPrediction = () => {
           />
         </div>
         <SelectFilter
-          title="Hari Keberangkatan"
+          title="Hari Berangkat"
           name="day"
           id="day"
           required="required"
@@ -128,9 +127,16 @@ const FilterPrediction = () => {
             Pilih Halte Tujuan
           </option>
         </SelectFilter>
-        <Button type="submit" onClick={handleSubmit}>
-          Prediksi
-        </Button>
+        <div className="button-container-form">
+          <h1>Tombol Prediksi</h1>
+          <Button
+            type="submit"
+            buttonType={'prediction'}
+            onClick={handleSubmit}
+          >
+            Prediksi
+          </Button>
+        </div>
       </form>
     </CardList>
   );

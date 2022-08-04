@@ -10,6 +10,7 @@ const CARD_LIST_TYPE_CLASSES = {
   healthcare: 'health-care',
   passengers: 'passengers',
   revenue: 'revenue',
+  filterprediction: 'filterprediction',
 };
 
 const CardList = (props) => {
