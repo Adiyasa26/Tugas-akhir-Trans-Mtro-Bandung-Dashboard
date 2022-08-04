@@ -3,7 +3,8 @@ import './style.scss'
 const BUTTON_TYPE_CLASSES = {
   google: 'google-sign-in',
   inverted: 'inverted',
-  signout: 'sign-out'
+  signout: 'sign-out',
+  prediction: 'prediction'
 };
 
 const Button = ({ children, buttonType, ...otherProps }) => {
