@@ -1,16 +1,32 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 
 import CardList from '..';
-import BusPredicitonCard from '../../../Bus-Card/BusPrediction';
+import TimeArrivalCard from '../../../Bus-Card/BusPrediction/TimeArrival';
+import CongestionDetection from '../../../Bus-Card/BusPrediction/CongestionDetection';
+import ParamsNotFilled from '../../../../../routes/Page/PramsNotFilled';
 
 const ResultPrediction = () => {
+  const busPredictionResult = useSelector(
+    state => state.busesData.busPredictionResult
+  );
+
   return (
     <CardList
       className="card-list--container"
-      title={'Filter Prediksi'}
-      cardListType={'filterprediction'}
+      title={'Hasil Prediksi'}
+      cardListType={'resultprediction'}
     >
-      <BusPredicitonCard />
+      <div className="resultprediction--container">
+        {busPredictionResult.length === 0 ? (
+          <ParamsNotFilled />
+        ) : (
+          <>
+            <TimeArrivalCard />
+            <CongestionDetection />
+          </>
+        )}
+      </div>
     </CardList>
   );
 };

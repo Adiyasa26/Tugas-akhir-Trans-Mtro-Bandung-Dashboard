@@ -11,6 +11,7 @@ const CARD_LIST_TYPE_CLASSES = {
   passengers: 'passengers',
   revenue: 'revenue',
   filterprediction: 'filterprediction',
+  resultprediction: 'resultprediction',
 };
 
 const CardList = (props) => {

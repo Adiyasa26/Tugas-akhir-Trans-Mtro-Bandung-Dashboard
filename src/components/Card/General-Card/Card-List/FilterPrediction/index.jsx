@@ -38,6 +38,12 @@ const FilterPrediction = () => {
   const handleSubmit = async event => {
     event.preventDefault();
     const params = { deptime, day, path, halteStart, halteEnd };
+
+    if (day === '' || path === '' || halteStart === '' || halteEnd === '') {
+      alert("Maaf tidak dapat melanjutkan prediksi, pastikan anda mengisi semua parameternya. Terimakasih.")
+      return
+    }
+
     const requestOptions = {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
