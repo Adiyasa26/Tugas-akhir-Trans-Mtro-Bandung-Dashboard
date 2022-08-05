@@ -2,6 +2,7 @@ import React from 'react';
 import { useEffect } from 'react';
 
 import FilterPrediction from '../../../../components/Card/General-Card/Card-List/FilterPrediction';
+import ResultPrediction from '../../../../components/Card/General-Card/Card-List/ResultPrediction';
 
 import './style.scss';
 
@@ -365,6 +366,7 @@ const PredictionContainer = () => {
       <div className="prediction-container--main">
         <div className="prediction-container--main__header">
           <FilterPrediction />
+          <ResultPrediction />
         </div>
         <div className="prediction-container--main__content"></div>
       </div>

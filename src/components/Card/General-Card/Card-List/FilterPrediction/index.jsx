@@ -1,13 +1,24 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 
 import CardList from '..';
 import SelectFilter from '../../../../SelectFilter';
 import Button from '../../../../Button';
 
+import { setBusPredictionParams, setBusPredictionResult } from '../../../../../store/action';
+
 const FilterPrediction = () => {
+  const dispatch = useDispatch();
+
+  const busPredictionParams = useSelector(state => state.busesData.busPredictionParams);
+
   const now = new Date();
   let now_hour = now.getHours();
   let now_minute = now.getMinutes();
+
+  if (now_hour < 10) {
+    now_hour = '0' + now_hour;
+  }
 
   if (now_minute < 10) {
     now_minute = '0' + now_minute;
@@ -15,23 +26,13 @@ const FilterPrediction = () => {
 
   const time_params = now_hour + ':' + now_minute;
 
-  const defaultValue = {
-    deptime: time_params,
-    day: '',
-    path: '',
-    halteStart: '',
-    halteEnd: '',
-  };
+  const { deptime, day, path, halteStart, halteEnd } = busPredictionParams;
 
-  const [selected, setSelected] = useState(defaultValue);
-  const [prediction, setPrediction] = useState('');
-  const { deptime, day, path, halteStart, halteEnd } = selected;
-
-  console.log(selected);
+  console.log(busPredictionParams);
 
   const handleChange = event => {
     const { name, value } = event.target;
-    setSelected({ ...selected, [name]: value });
+    dispatch(setBusPredictionParams({ ...busPredictionParams, [name]: value }));
   };
 
   const handleSubmit = async event => {
@@ -44,10 +45,8 @@ const FilterPrediction = () => {
     };
     fetch('/predict', requestOptions)
       .then(response => response.json())
-      .then(data => setPrediction(data));
+      .then(data => dispatch(setBusPredictionResult(data)));
   };
-
-  console.log(prediction);
 
   return (
     <CardList
