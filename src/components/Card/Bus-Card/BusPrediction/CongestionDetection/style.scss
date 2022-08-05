@@ -1,0 +1,60 @@
+.congestion-predicition-card--container {
+    position: relative;
+    display: flex;
+    flex-grow: 1;
+    background-image: linear-gradient(to right, #fff386, #eecc34);
+    border-radius: 10px;
+    border: solid 3px #eecc34;
+    padding: 20px 30px;
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
+
+    &-left {
+        img {
+            top: 0;
+            left: 50%;
+            transform: translate(50%, 8%);
+            position: absolute;
+            width: 30%;
+            opacity: 0.2;
+
+            &.logo {
+                top: 0;
+                left: 0;
+                transform: translate(50%, 40%);
+                position: absolute;
+                opacity: 1;
+                width: 50px;
+                border-radius: 5px;
+                z-index: 99;
+            }
+        }
+    }
+
+    &-right {
+        margin-left: 70px;
+        & h2 {
+            font-size: 20px;
+            color: #3e4345;
+            margin-bottom: 20px;
+
+            &.error-handler {
+                margin: 15px 0;
+            }
+        }
+
+        & li {
+            font-size: 16px;
+            font-weight: 600;
+
+            &.color-1 {
+                color: #ca1010;
+            }
+            &.color-2{
+                color: #ff5e00;
+            }
+            &.color-3 {
+                color: #2cbb01;
+            }
+        }
+    }
+}
