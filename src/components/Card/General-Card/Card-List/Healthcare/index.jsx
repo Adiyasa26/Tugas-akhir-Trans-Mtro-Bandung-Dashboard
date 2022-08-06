@@ -69,11 +69,11 @@ const Mask = props => {
       ) {
         if (healthcare[count].label === 'Mask') {
           mask += 1;
-          realMask = Math.ceil(mask / 28);
+          realMask = Math.ceil(mask / 24);
           setMaskCount(realMask);
         } else {
           nomask += 1;
-          realNoMask = Math.ceil(nomask / 28);
+          realNoMask = Math.ceil(nomask / 24);
           setNoMaskCount(realNoMask);
         }
 
